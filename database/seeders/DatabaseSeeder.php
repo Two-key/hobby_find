@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             GroupSeeder::class,
             CategorySeeder::class,
             PostSeeder::class,
+            TalkSeeder::class,
         ]);
     }
 }
