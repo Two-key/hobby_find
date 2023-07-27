@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('group_id');
             $table->string('title', 50);
             $table->string('comment', 200);
            // $table->string('image_url');//後で追加。

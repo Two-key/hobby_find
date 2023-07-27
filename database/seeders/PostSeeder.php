@@ -17,11 +17,13 @@ class PostSeeder extends Seeder
     {
        DB::table('posts')->insert([
             'title' => '読書会',
-            'comment' => '今日はみんなで読書しました'
+            'comment' => '今日はみんなで読書しました',
+            'group_id' => '1',
             ]);
         DB::table('posts')->insert([
             'title' => '映画鑑賞会',
-            'comment' => 'アクション映画を鑑賞しました'
+            'comment' => 'アクション映画を鑑賞しました',
+            'group_id' => '2',
             ]);
     }
 }
