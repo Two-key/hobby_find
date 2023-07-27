@@ -17,12 +17,16 @@ class GroupSeeder extends Seeder
     public function run()
     {
         DB::table('groups')->insert([
-                'title' => '1グループ',
-                'overview' => '私たちは◯◯なグループです',
+            'category_id' => '1',
+            'title' => '1グループ',
+            'overview' => '私たちは読書好きなグループです',
+                
          ]);
           DB::table('groups')->insert([
-                'title' => '2グループ',
-                'overview' => '私たちは◯◯なグループです',
+            'category_id' => '2',
+            'title' => '2グループ',
+            'overview' => '私たちは映画好きなグループです',
+                
          ]);
          
     }
