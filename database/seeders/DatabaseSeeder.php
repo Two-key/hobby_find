@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             PostSeeder::class,
             TalkSeeder::class,
             JoinSeeder::class,
+            LikeSeeder::class,
         ]);
     }
 }
