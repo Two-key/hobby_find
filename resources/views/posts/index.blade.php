@@ -9,7 +9,7 @@
     <body>
         <h1>趣味を探す？楽しむ？仲間を集める？</h1>
 
-                <h2 class='title'><a href="/index/find">趣味を探す</a>
+                <h2 class='title'><a href="/index/serch">趣味を探す</a>
                 
                 <h2 class='title'><a href="/index/enjoy">趣味を楽しむ</a>
                 
