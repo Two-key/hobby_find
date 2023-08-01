@@ -20,4 +20,9 @@ class GroupController extends Controller
         return redirect('/groups/' . $group->id);
         
     }
+    public function group_show(Group $group)
+{
+    return view('posts.group_show')->with(['groups' => $group->get()]);
+ //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
+}
 }
