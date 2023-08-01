@@ -13,7 +13,7 @@
                 
                 <h2 class='title'><a href="/index/enjoy">趣味を楽しむ</a>
                 
-                <h2 class='title'><a href="/index/create">仲間を集める</a>
+                <h2 class='title'><a href="/index/create_group">仲間を集める</a>
                 </h2>
     </body>
 </html>

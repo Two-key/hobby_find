@@ -14,8 +14,8 @@
                 <h2>List</h2>
                  <div class='categories'>
             @foreach ($categories as $category)
-                <div class='category-list'>
-                    <h2 class='title'>{{ $category->category-list }}</h2>
+                <div class='category-name'>
+                    <h2 class='title'>{{ $category->category_name }}</h2>
                 </div>
             @endforeach
         </div>
