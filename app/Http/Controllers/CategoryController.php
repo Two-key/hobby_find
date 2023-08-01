@@ -18,5 +18,10 @@ class CategoryController extends Controller
         return view('posts.serch')->with(['categories' => $category->get()]);
         
     }
+    public function group(Category $category)
+    {
+        return view('posts.group')->with(['categories' => $category->get()]);
+        
+    }
     
 }
