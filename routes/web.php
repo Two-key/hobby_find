@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\GroupController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,7 +33,10 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
- Route::get('/', [PostController::class, 'index']);
+Route::get('/', [CategoryController::class, 'index']);
 
-Route::get('/index/serch', [PostController::class ,'serch']);
+Route::get('/index/serch', [CategoryController::class ,'serch']);
 
+Route::get('/index/create_group', [GroupController::class, 'create_group']);
+
+Route::post('/groups', [GroupController::class, 'store']);
