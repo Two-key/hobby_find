@@ -10,17 +10,17 @@ class CategoryController extends Controller
 {
     public function index(Category $category)
     {
-        return view('posts.index')->with(['categories' => $category->get()]);  
-       //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
+        return view('first.index')->with(['groups' => $category->get()]);  
+
     }
     public function serch(Category $category)
     {
-        return view('posts.serch')->with(['categories' => $category->get()]);
+        return view('first.serch')->with(['categories' => $category->get()]);
         
     }
-    public function group(Category $category)
+    public function group_show(Category $category)
     {
-        return view('posts.group')->with(['categories' => $category->get()]);
+        return view('first.group_show')->with(['category' => $category]);
         
     }
     

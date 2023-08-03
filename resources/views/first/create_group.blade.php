@@ -5,7 +5,6 @@
         <title>Blog</title>
     </head>
     <body>
-        <h1>Blog Name</h1>
         <form action="/groups" method="POST">
             @csrf
             <div class="title">
@@ -14,11 +13,11 @@
             </div>
             <div class="body">
                 <h2>作りたいグループの概要</h2>
-                <textarea name="group[body]" placeholder="今日も1日お疲れさまでした。"></textarea>
+                <textarea name="group[overview]" placeholder="◯◯好きを募集します！など"></textarea>
             </div>
             <div class="category">
                 <h2>Category</h2>
-                <select name="post[category_id]">
+                <select name="group[category_id]">
                     @foreach($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->category_name }}</option>
                     @endforeach
