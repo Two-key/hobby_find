@@ -7,8 +7,12 @@ use App\Models\Category;
 
 class PostController extends Controller
 {
-    public function create(Category $category)
+    public function post_create()
 {
-    return view('posts.create')->with(['categories' => $category->get()]);
+    return view('second.post_create');
 }
+ public function group_content(Post $post)
+    {
+        return view('second.group_content')->with(['posts' => $post->getByLimit()]);  
+    }
 }

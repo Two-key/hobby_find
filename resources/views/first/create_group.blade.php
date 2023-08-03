@@ -13,7 +13,11 @@
             </div>
             <div class="body">
                 <h2>作りたいグループの概要</h2>
-                <textarea name="group[overview]" placeholder="◯◯好きを募集します！など"></textarea>
+                <textarea name="group[overview]" placeholder=
+                "参加人数：◯人
+                活動日：◯曜日
+                場所：◯◯
+                活動内容：◯◯な事をしています！"></textarea>
             </div>
             <div class="category">
                 <h2>Category</h2>

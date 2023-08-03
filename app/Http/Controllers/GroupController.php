@@ -21,8 +21,12 @@ class GroupController extends Controller
         
     }
     public function group_show(Group $group)
-{
+    {
     return view('first.group_show')->with(['groups' => $group->get()]);
- //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
-}
+        
+    }
+    public function group_content(Group $group)
+    {
+    return view('second.group_content')->with(['groups' => $group->get()]);
+    }
 }
