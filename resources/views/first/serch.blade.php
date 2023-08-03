@@ -12,14 +12,13 @@
                 <h2>あなたの好きなことは何？</h2>
             </div>
                 <h2>List</h2>
-                 <div class='categories'>
-            @foreach ($categories as $category)
-                <div class='category-name'>
-                    <h2 class='title'>{{ $category->category_name }}</h2>
-                </div>
-            @endforeach
-        </div>
-        </form>
+               <select name="group[category_id]">
+                   @foreach($categories as $category)
+                   <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                   @endforeach
+                   </select>
+                   </form>
+                   <a href="/categories/{{ $category->id }}/group_show">検索</a>
         <div class="footer">
             <a href="/">戻る</a>
         </div>

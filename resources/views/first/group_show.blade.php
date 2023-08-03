@@ -8,9 +8,10 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
+        <h1>{{ $category->category_name }}が好きな人の集まり</h1>
         <h1 class="title">
             <div class='groups'>
-            @foreach ($groups as $group)
+            @foreach ($category->groups as $group)
                 <div class='title'>
                     <h2 class='title'>{{ $group->title }}</h2>
                 </div>

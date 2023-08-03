@@ -42,3 +42,5 @@ Route::get('/index/create_group', [GroupController::class, 'create_group']);
 Route::post('/groups', [GroupController::class, 'store']);
 
 Route::get('/index/group_show', [GroupController::class ,'group_show']);
+
+Route::get('/categories/{category}/group_show', [CategoryController::class,'group_show']);
