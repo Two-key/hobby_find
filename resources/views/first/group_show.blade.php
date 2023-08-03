@@ -13,7 +13,7 @@
             <div class='groups'>
             @foreach ($category->groups as $group)
                 <div class='title'>
-                    <h2 class='title'>{{ $group->title }}</h2>
+                    <a href="/group_show/{{ $group->id }}">{{ $group->title }}</a>
                 </div>
             @endforeach
         </div>
