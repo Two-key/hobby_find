@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Group;
+use App\Models\Post;
 
 class GroupController extends Controller
 {
@@ -27,6 +28,11 @@ class GroupController extends Controller
     }
     public function group_content(Group $group)
     {
-    return view('second.group_content')->with(['groups' => $group->get()]);
+        $posts = Post::query();
+        
+        $posts->where('group_id', $group->Id);
+
+        $filteredPosts = $posts->get();
+    return view('second.group_content')->with(['group' => $group, 'posts' => $filteredPosts]);
     }
 }

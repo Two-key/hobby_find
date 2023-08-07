@@ -41,9 +41,9 @@ Route::get('/index/create_group', [GroupController::class, 'create_group']);
 
 Route::post('/groups', [GroupController::class, 'store']);
 
-Route::get('/categories/{category}/group_show', [CategoryController::class,'group_show']);
+Route::get('/categories/group_show', [CategoryController::class,'group_show'])->name('group.serch');
 
-Route::get('/categories/{category}/group_show/{group}', [GroupController::class ,'group_content']);
+Route::get('/group_show/{group}', [GroupController::class ,'group_content']);
 
 Route::get('/group_content/post_create', [PostController::class,'post_create']);
 

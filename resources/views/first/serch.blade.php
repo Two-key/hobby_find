@@ -6,20 +6,20 @@
     </head>
     <body>
         <h1>趣味を探す</h1>
-        <form action="/posts" method="POST">
+        <form action="{{ route('group.serch') }}" method="GET">
             @csrf
             <div class="title">
                 <h2>あなたの好きなことは何？</h2>
             </div>
                 <h2>List</h2>
-               <select name="group[category_id]">
+               <select name="category">
                    @foreach($categories as $category)
                    <option value="{{ $category->id }}">{{ $category->category_name }}</option>
                    @endforeach
                    </select>
-                   </form>
-                   <a href="/categories/{{ $category->id }}/group_show">検索</a>
-        <div class="footer">
+                   <button type="submit">検索</button>
+        </form>
+    <div class="footer">
             <a href="/">戻る</a>
         </div>
     </body>

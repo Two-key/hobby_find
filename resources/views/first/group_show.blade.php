@@ -11,7 +11,7 @@
         <h1>{{ $category->category_name }}が好きな人の集まり</h1>
         <h1 class="title">
             <div class='groups'>
-            @foreach ($category->groups as $group)
+            @foreach ($groups as $group)
                 <div class='title'>
                     <a href="/group_show/{{ $group->id }}">{{ $group->title }}</a>
                 </div>
