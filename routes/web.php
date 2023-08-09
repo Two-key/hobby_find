@@ -45,6 +45,8 @@ Route::get('/categories/group_show', [CategoryController::class,'group_show'])->
 
 Route::get('/group_show/{group}', [GroupController::class ,'group_content']);
 
-Route::get('/group_content/post_create', [PostController::class,'post_create']);
+Route::get('/group_content/{group}/post_create', [PostController::class,'post_create']);
 
 Route::get('/{group}', [PostController::class, 'group_content']);
+
+Route::post('/{group}/posts', [PostController::class, 'store']);

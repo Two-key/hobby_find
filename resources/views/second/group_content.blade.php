@@ -18,7 +18,7 @@
             </div>
         </div>
         
-        <a href='/group_content/post_create'>create</a>
+        <a href='/group_content/{{$group->id}}/post_create'>create</a>
         
           <div class='posts'>
             @foreach ($posts as $post)
