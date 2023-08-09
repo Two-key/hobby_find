@@ -28,11 +28,8 @@ class GroupController extends Controller
     }
     public function group_content(Group $group)
     {
-        $posts = Post::query();
+        //dd($group->posts()->get());
         
-        $posts->where('group_id', $group->Id);
-
-        $filteredPosts = $posts->get();
-    return view('second.group_content')->with(['group' => $group, 'posts' => $filteredPosts]);
+    return view('second.group_content')->with(['group' => $group, 'posts' => $group->posts()->get()]);
     }
 }

@@ -11,11 +11,15 @@ class Post extends Model
     
     protected $fillable = [
     'title',
-    'body',
-    'category_id'
+    'comment',
+    'group_id'
 ];
 public function getPaginateByLimit(int $limit_count = 5)
 {
     return $this::with('category')->orderBy('updated_at', 'DESC')->paginate($limit_count);
+}
+public function group()
+{
+    return $this->belongsTo(Group::class);
 }
 }

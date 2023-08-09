@@ -4,15 +4,30 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Post;
+use App\Models\Group;
+use App\Http\Requests\PostRequest;
 
 class PostController extends Controller
 {
-    public function post_create()
-{
-    return view('second.post_create');
-}
- public function group_content(Post $post)
+    public function post_create(Post $post, Group $group)
     {
-        return view('second.group_content')->with(['posts' => $post->getByLimit()]);  
+    return view('second.post_create')->with(['posts' => $post, 'group' => $group]);
+    }
+    
+    public function group_content(Post $post)
+    {
+        dd($post->get());
+        return view('second.group_content')->with(['posts' => $post->get()]);  
+    }
+    
+    public function store(Post $post, PostRequest $request, Group $group) // 引数をRequestからPostRequestにする
+    {
+        $input = $request['post'];
+        $input += array('group_id'=> $group->id);
+        //dd($input);
+        $post->fill($input)->save();
+        return redirect('/');
+        
     }
 }
