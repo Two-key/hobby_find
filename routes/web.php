@@ -37,6 +37,8 @@ Route::get('/', [CategoryController::class, 'index']);
 
 Route::get('/index/serch', [CategoryController::class ,'serch']);
 
+Route::get('/index/user_join', [GroupController::class, 'group_join']);
+
 Route::get('/index/create_group', [GroupController::class, 'create_group']);
 
 Route::post('/groups', [GroupController::class, 'store']);
@@ -50,3 +52,7 @@ Route::get('/group_content/{group}/post_create', [PostController::class,'post_cr
 Route::get('/{group}', [PostController::class, 'group_content']);
 
 Route::post('/{group}/posts', [PostController::class, 'store']);
+
+Route::post('/{group}/joins', [GroupController::class,'user_join']);
+
+Route::get('/{group}/user_join', [GroupController::class,'group_join']);
