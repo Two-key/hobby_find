@@ -18,6 +18,12 @@
             </div>
         </div>
         
+        <form action="/{{$group->id}}/joins" method="POST">
+            @csrf
+            
+            <input type="submit" value="仲間入りする"/>
+        </form>
+        
         <a href='/group_content/{{$group->id}}/post_create'>create</a>
         
           <div class='posts'>

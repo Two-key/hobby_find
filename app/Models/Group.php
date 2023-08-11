@@ -22,4 +22,8 @@ public function posts()
 {
     return $this->hasMany(Post::class);  
 }
+public function user_join()   
+{
+    return $this->belongsTo(Join::class);  
+}
 }

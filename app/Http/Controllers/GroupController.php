@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
 use App\Models\Group;
 use App\Models\Post;
+use App\Models\Join;
+use App\Models\User;
 
 class GroupController extends Controller
 {
@@ -31,5 +34,17 @@ class GroupController extends Controller
         //dd($group->posts()->get());
         
     return view('second.group_content')->with(['group' => $group, 'posts' => $group->posts()->get()]);
+    }
+    public function group_join(Join $join)
+    {
+    return view('second.user_join')->with(['joins' => $join->get()]);
+        
+    }
+    public function user_join(Join $join, Group $group, User $user)
+    {
+    $join->group_id = $group->id;
+    $join->user_id = \Auth::id(); 
+    $join->save();
+        
     }
 }
