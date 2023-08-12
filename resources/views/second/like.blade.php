@@ -3,17 +3,17 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Posts</title>
+        <title>Likes</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>仲間入りしたグループ</h1>
+        <h1>気になるグループ</h1>
         <h1 class="title">
             <div class='groups'>
-            @foreach ($joins as $join)
+            @foreach ($likes as $like)
                 <div class='title'>
-                    <a href="/group_content/{{ $join->id }}">{{ $join->title }}</a>
+                    <a href="/group_content/{{ $like->id }}">{{ $like->title }}</a>
                 </div>
             @endforeach
         </div>

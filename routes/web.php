@@ -53,6 +53,10 @@ Route::get('/{group}', [PostController::class, 'group_content']);
 
 Route::post('/{group}/posts', [PostController::class, 'store']);
 
-Route::post('/{group}/joins', [GroupController::class,'user_join']);
+Route::post('/{group}/user_join', [GroupController::class,'user_join']);
 
-Route::get('/{group}/user_join', [GroupController::class,'group_join']);
+Route::get('/{group}/group_join', [GroupController::class,'group_join']);
+
+Route::post('/{group}/user_like', [GroupController::class,'user_like']);
+
+Route::get('/{group}/like', [GroupController::class,'like']);
