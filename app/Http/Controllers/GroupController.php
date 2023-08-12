@@ -37,7 +37,7 @@ class GroupController extends Controller
     }
     public function group_join(Join $join)
     {
-    return view('second.user_join')->with(['joins' => $join->get()]);
+    return view('second.group_join')->with(['joins' => $join->get()]);
         
     }
     public function user_join(Join $join, Group $group, User $user)
@@ -46,5 +46,16 @@ class GroupController extends Controller
     $join->user_id = \Auth::id(); 
     $join->save();
         
+    }
+    public function like(Like $like)
+    {
+    return view('second.like')->with(['likes' => $like->get()]);
+        
+    }
+    public function user_like(Like $like, Group $group, User $user)
+    {
+    $like->group_id = $group->id;
+    $like->user_id = \Auth::id(); 
+    $like->save();
     }
 }
