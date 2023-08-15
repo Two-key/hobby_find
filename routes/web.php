@@ -65,3 +65,8 @@ Route::post('/{group}/user_like', [GroupController::class,'user_like']);
 
 Route::get('posts/{post}/edit', [PostController::class, 'edit']);
 Route::put('/{post}', [PostController::class, 'update']);
+
+Route::post('/add', 'TalkController@add')->name('add');
+
+Route::get('/result/ajax', 'TalkController@getData');
+
