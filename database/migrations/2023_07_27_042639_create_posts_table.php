@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('group_id')->constrained();
             $table->string('title', 50);
             $table->string('comment', 200);
-           // $table->string('image_url');//後で追加。
+            $table->string('image_url');
             $table->timestamps();
             
         });

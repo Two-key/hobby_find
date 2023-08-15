@@ -16,8 +16,12 @@ return new class extends Migration
     {
         Schema::create('likes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('group_id');
+            $table->foreignId('user_id')
+                ->constrained() //userテーブルのidカラムを参照するconstrainedメソッド
+                ->onDelete('cascade'); //削除時のオプション
+            $table->foreignId('group_id')
+               ->constrained()
+               ->onDelete('cascade');
             $table->timestamps();
         });
     }

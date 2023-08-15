@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GroupController;
+use App\Http\Controllers\LikeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,6 +46,9 @@ Route::post('/groups', [GroupController::class, 'store']);
 
 Route::get('/categories/group_show', [CategoryController::class,'group_show'])->name('group.serch');
 
+Route::get('/like/{group}', [LikeController::class,'like'])->name('like');;
+Route::get('/unlike/{group}', [LikeController::class, 'unlike'])->name('unlike');
+
 Route::get('/group_show/{group}', [GroupController::class ,'group_content']);
 
 Route::get('/group_content/{group}/post_create', [PostController::class,'post_create']);
@@ -59,4 +63,5 @@ Route::get('/{group}/group_join', [GroupController::class,'group_join']);
 
 Route::post('/{group}/user_like', [GroupController::class,'user_like']);
 
-Route::get('/{group}/like', [GroupController::class,'like']);
+Route::get('posts/{post}/edit', [PostController::class, 'edit']);
+Route::put('/{post}', [PostController::class, 'update']);

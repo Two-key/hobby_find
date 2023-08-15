@@ -19,11 +19,13 @@ class PostSeeder extends Seeder
             'title' => '読書会',
             'comment' => '今日はみんなで読書しました',
             'group_id' => '1',
+            'image_url' => 'sample.png',
             ]);
         DB::table('posts')->insert([
             'title' => '映画鑑賞会',
             'comment' => 'アクション映画を鑑賞しました',
             'group_id' => '2',
+            'image_url' => 'sample.png',
             ]);
     }
 }

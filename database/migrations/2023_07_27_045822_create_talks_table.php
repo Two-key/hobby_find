@@ -15,9 +15,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('talks', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('send')->comment('送信者');
-            $table->bigInteger('receive')->comment('受信者');
+            $table->id();
+            $table->foreignId('user_id');
+            $table->foreignId('group_id');
             $table->text('message')->comment('メッセージ');
             $table->timestamps();
         });

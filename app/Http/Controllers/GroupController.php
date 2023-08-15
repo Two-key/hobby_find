@@ -9,6 +9,7 @@ use App\Models\Group;
 use App\Models\Post;
 use App\Models\Join;
 use App\Models\User;
+use App\Models\Like;
 
 class GroupController extends Controller
 {
@@ -29,11 +30,10 @@ class GroupController extends Controller
     return view('first.group_show')->with(['groups' => $group->get()]);
         
     }
-    public function group_content(Group $group)
+    public function group_content(Group $group, Like $like, User $user, Post $post)
     {
-        //dd($group->posts()->get());
-        
-    return view('second.group_content')->with(['group' => $group, 'posts' => $group->posts()->get()]);
+        $like->where('user_id', $user->id)->where('group_id', $group->id)->get();
+        return view('second.group_content', compact('group', 'like'))->with(['group' => $group, 'posts' => $group->posts()->get()]);
     }
     public function group_join(Join $join)
     {
@@ -47,15 +47,13 @@ class GroupController extends Controller
     $join->save();
         
     }
-    public function like(Like $like)
-    {
-    return view('second.like')->with(['likes' => $like->get()]);
-        
-    }
+    
     public function user_like(Like $like, Group $group, User $user)
     {
     $like->group_id = $group->id;
     $like->user_id = \Auth::id(); 
     $like->save();
+    $like->where('user_id', $user_id)->where('group_id', $group_id)->get();
+    return redirect('/group_show/' .$group->id);
     }
 }
