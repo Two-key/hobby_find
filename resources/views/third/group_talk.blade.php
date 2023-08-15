@@ -7,20 +7,34 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
-    <body>
-        <h1>{{ $group->title }}</h1>
-        <h1 class="title">
-            <div class='groups'>
-            @foreach ($groups as $group)
-                <div class='title'>
-                    <a href="/group_show/{{ $group->id }}">{{ $group->title }}</a>
-                </div>
-            @endforeach
+    @extends('layouts.app')
+
+@section('content')
+<div class="chat-container row justify-content-center">
+    <div class="chat-area">
+        <div class="card">
+            <div class="card-header">Comment</div>
+            <div class="card-body chat-card">
+                <div id="comment-data"></div>
+            </div>
         </div>
-        </h1>
-        
-        <div class="footer">
-            <a href="/">戻る</a>
+    </div>
+</div>
+<form method="POST" action="{{route('add')}}">
+    @csrf
+    <div class="comment-container row justify-content-center">
+        <div class="input-group comment-area">
+            <textarea class="form-control" id="comment" name="comment" placeholder="input massage"
+                aria-label="With textarea"
+                onkeydown="if(event.shiftKey&&event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+            <button type="submit" class="btn btn-outline-primary comment-btn">Submit</button>
         </div>
-    </body>
+    </div>
+</form>
+
+@endsection
+@section('js')
+<script src="{{ asset('js/comment.js') }}"></script>
+@endsection
+
 </html>
