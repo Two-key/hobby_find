@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\Group;
 use App\Http\Requests\PostRequest;
+use Cloudinary; 
 
 class PostController extends Controller
 {
@@ -23,8 +24,13 @@ class PostController extends Controller
     
     public function store(Post $post, PostRequest $request, Group $group) // 引数をRequestからPostRequestにする
     {
+       
+
         $input = $request['post'];
         $input += array('group_id'=> $group->id);
+          //cloudinaryへ画像を送信し、画像のURLを$image_urlに代入している
+        $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        $input += ['image_url' => $image_url];
         //dd($input);
         $post->fill($input)->save();
         return redirect('/');

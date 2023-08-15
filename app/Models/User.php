@@ -19,6 +19,16 @@ class User extends Authenticatable
     {
     return $this->hasMany(Join::class);  
     }
+    
+    public function likes()   
+    {
+    return $this->hasMany(Like::class);  
+    }
+    
+    public function group()   
+    {
+    return $this->hasMany(Group::class);  
+    }
     /**
      * The attributes that are mass assignable.
      *

@@ -6,7 +6,7 @@
     </head>
     <body>
         <h1></h1>
-        <form action="/{{$group-> id}}/posts" method="POST">
+        <form action="/{{$group-> id}}/posts" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="title">
                 <h2>Title</h2>
@@ -18,6 +18,11 @@
                 <textarea name="post[comment]" placeholder="今日も1日お疲れさまでした。">{{ old('post.comment') }}</textarea>
                 <p class="comment__error" style="color:red">{{ $errors->first('post.comment') }}</p>
             </div>
+             <!-- ここから追加 -->
+            <div class="image">
+                <input type="file" name="image">
+            </div>
+            <!-- ここまで追加 -->
             <input type="submit" value="保存"/>
         </form>
         <div class="back">[<a href="/">back</a>]</div>
