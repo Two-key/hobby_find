@@ -31,10 +31,10 @@ class TalkController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function group_talk()
     {
         $comments = Comment::get();
-        return view('home', ['comments' => $comments]);
+        return view('group_talk', ['comments' => $comments]);
     }
     
     public function add(Request $request)
