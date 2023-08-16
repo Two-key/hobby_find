@@ -57,11 +57,13 @@ Route::get('/{group}', [PostController::class, 'group_content']);
 
 Route::post('/{group}/posts', [PostController::class, 'store']);
 
-Route::post('/{group}/user_join', [GroupController::class,'user_join']);
+//Route::post('/{group}/user_join', [GroupController::class,'user_join']);
 
-Route::get('/{group}/group_join', [GroupController::class,'group_join']);
+//Route::get('/{group}/group_join', [GroupController::class,'group_join']);
 
-Route::post('/{group}/user_like', [GroupController::class,'user_like']);
+//Route::post('/{group}/user_like', [GroupController::class,'user_like']);
+
+Route::post('/like', 'LikeController@like')->name('groups.like');
 
 Route::get('posts/{post}/edit', [PostController::class, 'edit']);
 Route::put('/{post}', [PostController::class, 'update']);
@@ -69,4 +71,6 @@ Route::put('/{post}', [PostController::class, 'update']);
 Route::post('/add', 'TalkController@add')->name('add');
 
 Route::get('/result/ajax', 'TalkController@getData');
+
+Route::get('/{group}/group_talk', [TalkController::class, 'group_talk']);
 

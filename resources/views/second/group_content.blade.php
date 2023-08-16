@@ -19,34 +19,34 @@
             </div>
         </div>
         
-        <form action="/{{$group->id}}/user_join" method="POST">
+        
+        <!--<form action="/{{$group->id}}/user_join" method="POST">
             @csrf
             <input type="submit" value="仲間入りする"/>
-        </form>
+        </form>-->
         
-        <form action="/{{$group->id}}/user_like" method="POST">
+        <a href='/{{$group->id}}/group_talk'>仲間入りする</a>
+        
+        <!--<form action="/{{$group->id}}/user_like" method="POST">
             @csrf
             <input type="submit" value="気になる"/>
-        </form>
+        </form>-->
         
     @auth
   <!-- Review.phpに作ったisLikedByメソッドをここで使用 -->
   @if (!$group->isLikedBy(Auth::user()))
     <span class="likes">
-        <i class="fas fa-music like-toggle" data-group-id="{{ $item->id }}"></i>
-      <span class="like-counter">{{$item->likes_count}}</span>
+        <i class="fas fa-music like-toggle" data-group-id="{{ $group->id }}"></i>
     </span><!-- /.likes -->
   @else
     <span class="likes">
-        <i class="fas fa-music heart like-toggle liked" data-group-id="{{ $item->id }}"></i>
-      <span class="like-counter">{{$item->likes_count}}</span>
+        <i class="fas fa-music heart like-toggle liked" data-group-id="{{ $group->id }}"></i>
     </span><!-- /.likes -->
   @endif
 @endauth
 @guest
   <span class="likes">
       <i class="fas fa-music heart"></i>
-    <span class="like-counter">{{$item->likes_count}}</span>
   </span><!-- /.likes -->
 @endguest
     </div>
