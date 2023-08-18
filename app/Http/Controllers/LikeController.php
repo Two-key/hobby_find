@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\Auth;
 class LikeController extends Controller
 {
     public function like(Group $group, Request $request){
-        $like=New Like();
-        $like->group_id=$group->id;
+        $like=new Like();
+        $like->group_id=$request->group_id;
         $like->user_id=Auth::user()->id;
         $like->save();
         return back();

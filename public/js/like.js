@@ -21,8 +21,11 @@ $(function () {
       $this.next('.like-counter').html(data.group_likes_count);
     })
     //通信失敗した時の処理
-    .fail(function () {
-      console.log('fail'); 
+    .fail(function (jqXHR, textStatus, errorThrown) {
+      console.log('fail');
+      console.log("jqXHR          : " + jqXHR.status); // HTTPステータスが取得
+                    console.log("textStatus     : " + textStatus);    // タイムアウト、パースエラー
+                    console.log("errorThrown    : " + errorThrown.message); // 例外情報
     });
   });
   });

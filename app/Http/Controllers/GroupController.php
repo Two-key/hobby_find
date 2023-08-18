@@ -34,7 +34,7 @@ class GroupController extends Controller
     {
         $reviews = Group::withCount('likes')->orderBy('id', 'desc')->paginate(10);
         $param = ['group' => $group,];
-        return view('second.group_content', $param);
+        //return view('second.group_content', $param);
         
         //$like->where('user_id', $user->id)->where('group_id', $group->id)->get();
         return view('second.group_content', compact('group', 'like'))->with(['group' => $group, 'posts' => $group->posts()->get()]);

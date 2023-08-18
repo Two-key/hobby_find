@@ -47,7 +47,7 @@ Route::post('/groups', [GroupController::class, 'store']);
 Route::get('/categories/group_show', [CategoryController::class,'group_show'])->name('group.serch');
 
 Route::get('/like/{group}', [LikeController::class,'like'])->name('like');;
-Route::get('/unlike/{group}', [LikeController::class, 'unlike'])->name('unlike');
+//Route::get('/unlike/{group}', [LikeController::class, 'unlike'])->name('unlike');
 
 Route::get('/group_show/{group}', [GroupController::class ,'group_content']);
 
@@ -63,7 +63,7 @@ Route::post('/{group}/posts', [PostController::class, 'store']);
 
 //Route::post('/{group}/user_like', [GroupController::class,'user_like']);
 
-Route::post('/like', 'LikeController@like')->name('groups.like');
+Route::post('/like', [LikeController::class, 'like'])->name('groups.like');
 
 Route::get('posts/{post}/edit', [PostController::class, 'edit']);
 Route::put('/{post}', [PostController::class, 'update']);

@@ -18,6 +18,7 @@ class PostController extends Controller
     
     public function group_content(Post $post)
     {
+        dd($post->get());
         return view('second.group_content')->with(['posts' => $post->get()]);  
     }
     

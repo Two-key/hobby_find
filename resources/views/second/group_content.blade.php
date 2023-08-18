@@ -7,6 +7,19 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        
+        <script src="{{ asset('js/like.js') }}" defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="固有のコード" crossorigin="anonymous">-->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <style>
+            .liked {
+                color: pink;
+                    }
+
+        </style>
     </head>
     <body>
         <h1 class="title">
@@ -31,11 +44,12 @@
             @csrf
             <input type="submit" value="気になる"/>
         </form>-->
-        
+   
     @auth
   <!-- Review.phpに作ったisLikedByメソッドをここで使用 -->
-  @if (!$group->isLikedBy(Auth::user()))
+  @if (!$group->isLikedBy(Auth::user())) 
     <span class="likes">
+       
         <i class="fas fa-music like-toggle" data-group-id="{{ $group->id }}"></i>
     </span><!-- /.likes -->
   @else
