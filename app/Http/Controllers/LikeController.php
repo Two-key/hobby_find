@@ -17,10 +17,5 @@ class LikeController extends Controller
         $like->save();
         return back();
     }
-    public function unlike(Group $group, User $user, Request $request){
-        $user=Auth::user()->id;
-        $like=Like::where('group_id', $group->id)->where('user_id', $user)->first();
-        $like->delete();
-        return back();
-    }
+    
 }

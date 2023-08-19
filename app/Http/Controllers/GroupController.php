@@ -13,6 +13,12 @@ use App\Models\Like;
 
 class GroupController extends Controller
 {
+    public function leader_create(Group $group)
+    {
+        return view('first.leader_create')->with(['groups' => $group->get()]);
+        
+    }
+    
     public function create_group(Category $category)
     {
         return view('first.create_group')->with(['categories' => $category->get()]);
