@@ -5,6 +5,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\TalkController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,8 +47,7 @@ Route::post('/groups', [GroupController::class, 'store']);
 
 Route::get('/categories/group_show', [CategoryController::class,'group_show'])->name('group.serch');
 
-Route::get('/like/{group}', [LikeController::class,'like'])->name('like');;
-//Route::get('/unlike/{group}', [LikeController::class, 'unlike'])->name('unlike');
+Route::get('/like/{group}', [LikeController::class,'like'])->name('like');
 
 Route::get('/group_show/{group}', [GroupController::class ,'group_content']);
 
@@ -61,16 +61,14 @@ Route::post('/{group}/posts', [PostController::class, 'store']);
 
 //Route::get('/{group}/group_join', [GroupController::class,'group_join']);
 
-//Route::post('/{group}/user_like', [GroupController::class,'user_like']);
-
 Route::post('/like', [LikeController::class, 'like'])->name('groups.like');
 
 Route::get('posts/{post}/edit', [PostController::class, 'edit']);
 Route::put('/{post}', [PostController::class, 'update']);
 
-Route::post('/add', 'TalkController@add')->name('add');
+Route::post('/add', [TalkController::class,'add'])->name('add');
 
-Route::get('/result/ajax', 'TalkController@getData');
+Route::get('/result/ajax', [TalkController::class, 'getData']);
 
 Route::get('/{group}/group_talk', [TalkController::class, 'group_talk']);
 
