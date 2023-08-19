@@ -53,7 +53,7 @@ Route::get('/like/{group}', [LikeController::class,'like'])->name('like');
 
 Route::get('/group_show/{group}', [GroupController::class ,'group_content']);
 
-Route::get('/{group}/leadergroup_show', [PostController::class,'post_create']);
+Route::get('/{group}/post_create', [PostController::class,'post_create']);
 
 Route::get('/{group}', [PostController::class, 'group_content']);
 
@@ -71,6 +71,7 @@ Route::post('/like', [LikeController::class, 'like'])->name('groups.like');
 
 Route::get('posts/{post}/post_edit', [PostController::class, 'post_edit']);
 Route::put('/{post}', [PostController::class, 'post_update']);
+Route::delete('/posts/{post}', [PostController::class,'post_delete']);
 
 Route::get('groups/{group}/group_edit', [GroupController::class, 'group_edit']);
 Route::put('/{group}', [GroupController::class, 'group_update']);
