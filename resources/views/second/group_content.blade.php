@@ -33,10 +33,10 @@
         </div>
         
         
-        <!--<form action="/{{$group->id}}/user_join" method="POST">
+        <form action="/{{$group->id}}/user_join" method="POST">
             @csrf
             <input type="submit" value="仲間入りする"/>
-        </form>-->
+        </form>
         
         <a href='/{{$group->id}}/group_talk'>仲間入りする</a>
         
