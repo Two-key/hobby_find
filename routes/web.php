@@ -43,6 +43,8 @@ Route::get('/group_join', [GroupController::class, 'group_join']);
 
 Route::get('/index/create_group', [GroupController::class, 'create_group']);
 
+Route::get('/{leader}/leader_create', [GroupController::class, 'leader_create']);
+
 Route::post('/groups', [GroupController::class, 'store']);
 
 Route::get('/categories/group_show', [CategoryController::class,'group_show'])->name('group.serch');
