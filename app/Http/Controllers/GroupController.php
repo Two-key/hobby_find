@@ -80,6 +80,25 @@ class GroupController extends Controller
         'group_likes_count' => $group_likes_count,
     ];
     return response()->json($param); //6.JSONデータをjQueryに返す
-}
+    }
+    
+    public function group_edit(Group $group)
+    {
+    return view('management.group_edit')->with(['group' => $group]);
+    }
+    
+    public function group_update(GroupRequest $request, Group $group)
+    {
+    $input_group = $request['group'];
+    $group->fill($input_group)->save();
+
+    return redirect('/leadergroup_show' . $group->id);
+    }
+    
+    public function group_delete(Group $group)
+    {
+    $group->delete();
+    return redirect('/');
+    }
 
 }
