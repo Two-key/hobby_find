@@ -36,4 +36,17 @@ class PostController extends Controller
         return redirect('/');
         
     }
+    
+    public function post_edit(Post $post)
+    {
+    return view('management.post_edit')->with(['post' => $post]);
+    }
+    
+    public function post_update(PostRequest $request, Post $post)
+    {
+    $input_post = $request['post'];
+    $post->fill($input_post)->save();
+
+    return redirect('/leadergroup_show' . $post->id);
+    }
 }
