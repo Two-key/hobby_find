@@ -40,11 +40,7 @@
         
         <a href='/{{$group->id}}/group_talk'>仲間入りする</a>
         
-        <!--<form action="/{{$group->id}}/user_like" method="POST">
-            @csrf
-            <input type="submit" value="気になる"/>
-        </form>-->
-   
+        
     @auth
   <!-- Review.phpに作ったisLikedByメソッドをここで使用 -->
   @if (!$group->isLikedBy(Auth::user())) 

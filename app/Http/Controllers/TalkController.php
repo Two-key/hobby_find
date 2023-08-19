@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Comment;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 
 class TalkController extends Controller
@@ -34,7 +34,7 @@ class TalkController extends Controller
     public function group_talk()
     {
         $comments = Comment::get();
-        return view('group_talk', ['comments' => $comments]);
+        return view('third.group_talk', ['comments' => $comments]);
     }
     
     public function add(Request $request)
@@ -46,7 +46,7 @@ class TalkController extends Controller
             'name' => $user->name,
             'comment' => $comment
     ]);
-    return redirect()->route('group_talk');
+    return redirect('/group_talk');
     }
 
 }
