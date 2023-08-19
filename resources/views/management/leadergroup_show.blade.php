@@ -12,6 +12,16 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         
         <script src="https://cdn.tailwindcss.com"></script>
+        
+        <script>
+        function deletePost(id) {
+        'use strict'
+
+        if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
+            document.getElementById(`form_${id}`).submit();
+        }
+        }
+        </script>
         <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="固有のコード" crossorigin="anonymous">-->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <style>
@@ -45,6 +55,13 @@
                         <img src="{{ $post->image_url }}" alt="画像が読み込めません。"/>
                     </div>
                     <div class="post_edit"><a href="/posts/{{ $post->id }}/post_edit">投稿を編集する</a></div>
+                    <p class='body'>{{ $post->body }}</p>
+
+                    <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button type="button" onclick="deletePost({{ $post->id }})">投稿を削除する</button> 
+                    </form>
                 </div>
             @endforeach
              <div class='paginate'>

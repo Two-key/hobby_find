@@ -49,4 +49,9 @@ class PostController extends Controller
 
     return redirect('/leadergroup_show' . $post->id);
     }
+    public function post_delete(Post $post)
+    {
+    $post->delete();
+    return redirect('/');
+    }
 }
