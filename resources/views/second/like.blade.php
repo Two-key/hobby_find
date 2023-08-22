@@ -11,9 +11,9 @@
         <h1>気になるグループ</h1>
         <h1 class="title">
             <div class='groups'>
-            @foreach ($likes as $like)
+            @foreach ($groups as $group)
                 <div class='title'>
-                    <a href="/group_content/{{ $like->id }}">{{ $like->title }}</a>
+                    <a href="/group_show/{{ $group->id }}">{{ $group->title }}</a>
                 </div>
             @endforeach
         </div>

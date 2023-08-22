@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
             $table->foreignId('category_id');
             $table->string('title', 50);
             $table->string('overview', 50);

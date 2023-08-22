@@ -10,12 +10,16 @@ use App\Models\Post;
 use App\Models\Join;
 use App\Models\User;
 use App\Models\Like;
+use App\Models\Leader;
 
 class GroupController extends Controller
 {
-    public function leader_create(Group $group)
+    public function leader_create()
     {
-        return view('first.leader_create')->with(['groups' => $group->get()]);
+        $user = Auth::user();
+        $groups = $user->groups()->get();
+        
+        return view('first.leader_create')->with(['groups' => $groups]);
         
     }
     
@@ -24,11 +28,19 @@ class GroupController extends Controller
         return view('first.create_group')->with(['categories' => $category->get()]);
         
     }
-    public function store(Request $request, Group $group)
+    public function store(Request $request, Group $group, User $user, Join $join)
     {
         $input = $request['group'];
+        $user = Auth::id();
+        $input['user_id'] = $user;
         $group->fill($input)->save();
-        return redirect('/');
+        $input = $request['group_id'];
+        $join=new Join();
+        $join->group_id=$request->group_id;
+        $join->user_id=Auth::user()->id;
+        $join->save();
+        
+        return redirect('/group_show/' . $group->id, $join->id);
         
     }
     public function group_show(Group $group)
@@ -46,18 +58,40 @@ class GroupController extends Controller
         return view('second.group_content', compact('group', 'like'))->with(['group' => $group, 'posts' => $group->posts()->get()]);
     }
     
-    public function user_join(Join $join, Group $group, User $user)
-    {
-    $join->group_id = $group->id;
-    $join->user_id = \Auth::id(); 
-    $join->save();
-    return view('second.group_content')->with(['group' => $group,'joins' => $join,'posts' => $group->posts()->get()]);
-    }
+    //*public function user_join(Join $join, Group $group, User $user)
+    //{
+        //$join->group_id = $group->id;
+        //$join->user_id = \Auth::id(); 
+        //$join->save();
+   
+        //return redirect('/group_show/' . $group->id)->with(['group' => $group,'joins' => $join,'posts' => $group->posts()->get()]);
+    //}
     
     public function group_join(Join $join)
     {
-        dd($join);
-    return view('second.group_join')->with(['joins' => $join->get()]);
+        $userId = \Auth::id();
+        $joins = Join::where('user_id', $userId)->get();
+        $groups = []; // 空の配列を初期化
+
+    foreach ($joins as $join) {
+        $group = Group::where('id', $join->group_id)->first();
+        $groups[] = $group; // 配列に追加
+    }
+        return view('second.group_join')->with(['groups' => $groups]);
+    }
+    
+    public function group_like(Request $request)
+    {
+        $userId = \Auth::id();
+        $likes = Like::where('user_id', $userId)->get();
+        $groups = []; // 空の配列を初期化
+
+    foreach ($likes as $like) {
+        $group = Group::where('id', $like->group_id)->first();
+        $groups[] = $group; // 配列に追加
+    }
+        return view('second.like')->with(['groups' => $groups]);
+        
     }
     
     public function like(Request $request)
@@ -82,17 +116,17 @@ class GroupController extends Controller
     return response()->json($param); //6.JSONデータをjQueryに返す
     }
     
-    public function group_edit(Group $group)
+    public function group_edit(Group $group, Category $category)
     {
-    return view('management.group_edit')->with(['group' => $group]);
+    return view('management.group_edit')->with(['group' => $group, 'categories' => $category->get()]);
     }
     
-    public function group_update(GroupRequest $request, Group $group)
+    public function group_update(Request $request, Group $group)
     {
     $input_group = $request['group'];
     $group->fill($input_group)->save();
 
-    return redirect('/leadergroup_show' . $group->id);
+    return redirect('/groups/' . $group->id);
     }
     
     public function group_delete(Group $group)

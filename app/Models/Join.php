@@ -20,6 +20,6 @@ class Join extends Model
 
 public function group()   
 {
-    return $this->hasMany(Group::class);  
+    return $this->belongsTo(Group::class);  
 }
 }

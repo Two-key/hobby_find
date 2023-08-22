@@ -20,6 +20,7 @@
                     }
 
         </style>
+       
     </head>
     <body>
         <h1 class="title">
@@ -38,14 +39,34 @@
             <input type="submit" value="仲間入りする"/>
         </form>
         
-        <a href='/{{$group->id}}/group_talk'>仲間入りする</a>
+<div>  
+    @auth
+  
+  @if (!$group->isJoinedBy(Auth::user())) 
+    <span class="joins">
+        <i class="fas fa-star join-toggle" data-group-id="{{ $group->id }}"></i>
+    </span>
+  @else
+    <span class="joins">
+        <i class="far fa-star join-toggle" data-group-id="{{ $group->id }}"></i>
+    </span>
+  @endif
+@endauth
+@guest
+  <span class="joins">
+      <i class="fas fa-music heart"></i>
+  </span>
+@endguest
+    </div>
+        
+        <a href='/{{$group->id}}/group_talk'>トークする</a>
         
         
+<div>  
     @auth
   <!-- Review.phpに作ったisLikedByメソッドをここで使用 -->
   @if (!$group->isLikedBy(Auth::user())) 
     <span class="likes">
-       
         <i class="fas fa-music like-toggle" data-group-id="{{ $group->id }}"></i>
     </span><!-- /.likes -->
   @else

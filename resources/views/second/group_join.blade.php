@@ -11,9 +11,9 @@
         <h1>仲間入りしたグループ</h1>
         <h1 class="title">
             <div class='groups'>
-            @foreach ($joins as $join)
+            @foreach ($groups as $group)
                 <div class='title'>
-                    <a href="/group_content/{{ $join->id }}">{{ $join->title }}</a>
+                    <a href="/group_show/{{ $group->id }}">{{ $group->title }}</a>
                 </div>
             @endforeach
         </div>
