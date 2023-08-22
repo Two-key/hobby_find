@@ -37,7 +37,7 @@ class TalkController extends Controller
         return view('third.group_talk', ['comments' => $comments]);
     }
     
-    public function add(Request $request)
+    public function add(Request $request, Comment $comment)
     {
         $user = Auth::user();
         $comment = $request->input('comment');
@@ -46,7 +46,7 @@ class TalkController extends Controller
             'name' => $user->name,
             'comment' => $comment
     ]);
-    return redirect('/group_talk');
+    return redirect('/group_talk/ . ');
     }
 
 }

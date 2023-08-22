@@ -12,7 +12,8 @@ class Group extends Model
     protected $fillable = [
     'title',
     'overview',
-    'category_id'
+    'category_id',
+    'user_id'
 ];
     public function category()
     {
@@ -24,7 +25,7 @@ class Group extends Model
     }
     public function user_join()   
     {
-        return $this->belongsTo(Join::class);  
+        return $this->hasMany(Join::class);  
     }
     public function likes() 
     {
@@ -37,4 +38,10 @@ class Group extends Model
     public function isLikedBy($user): bool {
         return Like::where('user_id', $user->id)->where('group_id', $this->id)->first() !==null;
     }
+    
+    //後でViewで使う、いいねされているかを判定するメソッド。
+    public function isJoinedBy($user): bool {
+        return Join::where('user_id', $user->id)->where('group_id', $this->id)->first() !==null;
+    
+}
 }

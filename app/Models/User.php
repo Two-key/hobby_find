@@ -17,17 +17,17 @@ class User extends Authenticatable
 
     public function user_join()   
     {
-    return $this->hasMany(Join::class);  
+        return $this->hasMany(Join::class);  
     }
-    
+   
     public function likes()   
     {
-    return $this->hasMany(Like::class);  
+        return $this->hasMany(Like::class);  
     }
     
-    public function group()   
+    public function groups()   
     {
-    return $this->hasMany(Group::class);  
+        return $this->hasMany(Group::class);  
     }
     /**
      * The attributes that are mass assignable.

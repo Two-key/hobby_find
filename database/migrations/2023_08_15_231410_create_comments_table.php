@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->foreignId('group_id');
             $table->integer('login_id');
             $table->string('name');
             $table->string('comment');

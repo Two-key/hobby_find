@@ -15,7 +15,9 @@
                 
                 <h2 class='title'><a href="/index/create_group">仲間を集める</a>
                 
-                <h2 class='title'><a href="{{leader}}/leader_create">自分で作ったグループ</a>
+                <h2 class='title'><a href="/index/leader_create">自分で作ったグループ</a>
+                
+                <h2 class='title'><a href="/index/like">気になるグループ</a>
                 </h2>
     </body>
 </html>

@@ -16,10 +16,10 @@ class PostController extends Controller
     return view('second.post_create')->with(['posts' => $post, 'group' => $group]);
     }
     
-    public function group_content(Post $post)
+    public function group_content(Group $group, Post $post)
     {
         //dd($post->get());
-        return view('second.group_content')->with(['posts' => $post->get()]);  
+        return view('second.group_content')->with(['group' => $group, 'posts' => $post->get()]);  
     }
     
     public function store(Post $post, PostRequest $request, Group $group) // 引数をRequestからPostRequestにする
@@ -47,11 +47,16 @@ class PostController extends Controller
     $input_post = $request['post'];
     $post->fill($input_post)->save();
 
-    return redirect('/leadergroup_show' . $post->id);
+    return redirect('/posts/' . $post->id);
     }
     public function post_delete(Post $post)
     {
     $post->delete();
     return redirect('/');
+    }
+    public function leadergroup_show(Post $post, Group $group)
+    {
+        //dd($group);
+    return view('management.leadergroup_show')->with(['posts' => $post->where('group_id', $group->id)->get(), 'group' => $group]);
     }
 }

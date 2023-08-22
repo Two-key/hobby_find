@@ -19,10 +19,10 @@
     <body>
         <h1>自分がつくったグループ</h1>
         <h1 class="title">
-            <div class='groups'>
+            <div class='leaders'>
             @foreach ($groups as $group)
                 <div class='title'>
-                    <a href="/{{ $leader->id }}/">{{ $group->title }}</a>
+                    <a href="/{{ $group->id }}/leadergroup_show">{{ $group->title }}</a>
                 </div>
                 <form action="/groups/{{ $group->id }}" id="form_{{ $group->id }}" method="post">
                 @csrf
