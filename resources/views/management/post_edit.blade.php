@@ -28,7 +28,7 @@
             <input type="submit" value="保存">
         </form>
         <div class="footer">
-            <a href="/index/leader_create">戻る</a>
+      <button type="button" onclick="history.back()">戻る</button>
         </div>
     </div>
 </body>

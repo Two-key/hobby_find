@@ -28,7 +28,7 @@
         </form>
             
         <div class="footer">
-            <a href="/">戻る</a>
+      <button type="button" onclick="history.back()">戻る</button>
         </div>
     </body>
 </html>

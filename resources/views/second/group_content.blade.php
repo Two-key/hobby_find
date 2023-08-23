@@ -34,21 +34,21 @@
         </div>
         
         
-        <form action="/{{$group->id}}/user_join" method="POST">
+        <!--<form action="/{$group->id}}/user_join" method="POST">
             @csrf
             <input type="submit" value="仲間入りする"/>
-        </form>
+        </form>-->
         
 <div>  
     @auth
   
   @if (!$group->isJoinedBy(Auth::user())) 
     <span class="joins">
-        <i class="fas fa-star join-toggle" data-group-id="{{ $group->id }}"></i>
+        <i class="far fa-star join-toggle" data-group-id="{{ $group->id }}"></i>
     </span>
   @else
     <span class="joins">
-        <i class="far fa-star join-toggle" data-group-id="{{ $group->id }}"></i>
+        <i class="fas fa-star join-toggle" data-group-id="{{ $group->id }}"></i>
     </span>
   @endif
 @endauth
@@ -98,7 +98,7 @@
         
         
         <div class="footer">
-            <a href="/">戻る</a>
+      <button type="button" onclick="history.back()">戻る</button>
         </div>
     </body>
 </html>
