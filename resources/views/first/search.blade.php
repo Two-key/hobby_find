@@ -2,11 +2,11 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>Blog</title>
+        <title>Search</title>
     </head>
     <body>
         <h1>趣味を探す</h1>
-        <form action="{{ route('group.serch') }}" method="GET">
+        <form action="{{ route('group.search') }}" method="GET">
             @csrf
             <div class="title">
                 <h2>あなたの好きなことは何？</h2>

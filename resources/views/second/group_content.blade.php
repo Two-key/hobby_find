@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Posts</title>
+        <title>GroupContent</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -18,8 +18,8 @@
             .liked {
                 color: pink;
                     }
-
         </style>
+        
        
     </head>
     <body>
@@ -34,37 +34,24 @@
         </div>
         
         
-        <!--<form action="/{$group->id}}/user_join" method="POST">
+        @if (!$user->isJoined($group->id))
+        <form action="/{{$group->id}}/user_join" method="POST">
             @csrf
             <input type="submit" value="仲間入りする"/>
-        </form>-->
-        
-<div>  
-    @auth
-  
-  @if (!$group->isJoinedBy(Auth::user())) 
-    <span class="joins">
-        <i class="far fa-star join-toggle" data-group-id="{{ $group->id }}"></i>
-    </span>
-  @else
-    <span class="joins">
-        <i class="fas fa-star join-toggle" data-group-id="{{ $group->id }}"></i>
-    </span>
-  @endif
-@endauth
-@guest
-  <span class="joins">
-      <i class="fas fa-music heart"></i>
-  </span>
-@endguest
-    </div>
-        
+        </form>
+        @else
+        <form action="/{{$group->id}}/user_join" method="POST">
+            @csrf
+            <input type="submit" value="グループへの参加を取り消す"/>
+        </form>
+        @endif
+
         <a href='/{{$group->id}}/group_talk'>トークする</a>
         
         
 <div>  
     @auth
-  <!-- Review.phpに作ったisLikedByメソッドをここで使用 -->
+
   @if (!$group->isLikedBy(Auth::user())) 
     <span class="likes">
         <i class="fas fa-music like-toggle" data-group-id="{{ $group->id }}"></i>

@@ -48,24 +48,42 @@ class GroupController extends Controller
     return view('first.group_show')->with(['groups' => $group->get()]);
         
     }
-    public function group_content(Request $request, Group $group, Like $like, User $user, Post $post)
+    public function group_content(Request $request, Group $group, Like $like, Post $post)
     {
         $reviews = Group::withCount('likes')->orderBy('id', 'desc')->paginate(10);
         $param = ['group' => $group,];
+        $user = Auth::user();
+        $group_id = $request->group_id;
+        //$joined=$user->isJoined($group_id);
         //return view('second.group_content', $param);
-        
+        $posts = $group->posts()->get();
         //$like->where('user_id', $user->id)->where('group_id', $group->id)->get();
-        return view('second.group_content', compact('group', 'like'))->with(['group' => $group, 'posts' => $group->posts()->get()]);
+        return view('second.group_content', compact('group', 'like', 'posts', 'user'));
     }
     
-    //*public function user_join(Join $join, Group $group, User $user)
-    //{
-        //$join->group_id = $group->id;
-        //$join->user_id = \Auth::id(); 
-        //$join->save();
-   
-        //return redirect('/group_show/' . $group->id)->with(['group' => $group,'joins' => $join,'posts' => $group->posts()->get()]);
-    //}
+    public function user_join(Join $join, Group $group, Request $request)
+    {
+        $user = Auth::user();
+        $group_id = $group->id;
+        $joined=$user->isJoined($group_id);
+        
+        if (!$joined) {
+            
+            //$join=new Join();
+            //$join->group_id=$group->id;
+            //$join->user_id=Auth::user()->id;
+            //return $join;
+             Join::create([
+                'group_id'=> $group->id, 
+                'user_id'=>\Auth::user()->id,
+            ]);
+           
+        } else {
+            Join::where('group_id', $group_id)->where('user_id', $user->id)->delete();
+            }
+            //$join->save();
+            return redirect('/group_show/' . $group->id);
+    }
     
     public function group_join(Join $join)
     {
@@ -79,6 +97,28 @@ class GroupController extends Controller
     }
         return view('second.group_join')->with(['groups' => $groups]);
     }
+    
+    //*public function user_join(Request $request)
+    //{
+    //$user_id = Auth::user()->id; //1.ログインユーザーのid取得
+    //$group_id = $request->review_id; //2.投稿idの取得
+   // $already_joined = Join::where('user_id', $user_id)->where('group_id', $group_id)->first(); //3.
+
+    //if (!$already_joined) { //もしこのユーザーがこの投稿にまだいいねしてなかったら
+       // $join = new Like; //4.Likeクラスのインスタンスを作成
+        //$join->group_id = $group_id; //Likeインスタンスにreview_id,user_idをセット
+        //$join->user_id = $user_id;
+       // $join->save();
+    //} else { //もしこのユーザーがこの投稿に既にいいねしてたらdelete
+       // Join::where('group_id', $group_id)->where('user_id', $user_id)->delete();
+    //}
+    //5.この投稿の最新の総いいね数を取得
+    //$review_likes_count = Group::withCount('likes')->findOrFail($group_id)->likes_count;
+    //$param = [
+        //'group_likes_count' => $group_likes_count,
+    //];
+   // return response()->json($param); //6.JSONデータをjQueryに返す
+    //}
     
     public function group_like(Request $request)
     {
@@ -96,22 +136,21 @@ class GroupController extends Controller
     
     public function like(Request $request)
     {
-    $user_id = Auth::user()->id; //1.ログインユーザーのid取得
-    $group_id = $request->review_id; //2.投稿idの取得
-    $already_liked = Like::where('user_id', $user_id)->where('group_id', $group_id)->first(); //3.
-
-    if (!$already_liked) { //もしこのユーザーがこの投稿にまだいいねしてなかったら
-        $like = new Like; //4.Likeクラスのインスタンスを作成
-        $like->group_id = $group_id; //Likeインスタンスにreview_id,user_idをセット
-        $like->user_id = $user_id;
-        $like->save();
-    } else { //もしこのユーザーがこの投稿に既にいいねしてたらdelete
-        Like::where('group_id', $group_id)->where('user_id', $user_id)->delete();
+        $user_id = Auth::user()->id; //1.ログインユーザーのid取得
+        $group_id = $request->group_id; //2.投稿idの取得
+        $already_liked = Like::where('user_id', $user_id)->where('group_id', $group_id)->first(); //3.
+        if (!$already_liked) { //もしこのユーザーがこの投稿にまだいいねしてなかったら
+            $like = new Like; //4.Likeクラスのインスタンスを作成
+            $like->group_id = $group_id; //Likeインスタンスにreview_id,user_idをセット
+            $like->user_id = $user_id;
+            $like->save();
+        } else { //もしこのユーザーがこの投稿に既にいいねしてたらdelete
+            Like::where('group_id', $group_id)->where('user_id', $user_id)->delete();
     }
     //5.この投稿の最新の総いいね数を取得
-    $review_likes_count = Group::withCount('likes')->findOrFail($group_id)->likes_count;
-    $param = [
-        'group_likes_count' => $group_likes_count,
+        $group_likes_count = Group::withCount('likes')->findOrFail($group_id)->likes_count;
+        $param = [
+            'group_likes_count' => $group_likes_count,
     ];
     return response()->json($param); //6.JSONデータをjQueryに返す
     }
@@ -123,10 +162,11 @@ class GroupController extends Controller
     
     public function group_update(Request $request, Group $group)
     {
+        //dd($request);
     $input_group = $request['group'];
     $group->fill($input_group)->save();
 
-    return redirect('/groups/' . $group->id);
+    return redirect($group->id);
     }
     
     public function group_delete(Group $group)

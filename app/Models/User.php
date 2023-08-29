@@ -58,7 +58,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    
+    public function isJoined($group_id) 
+    {
+        $joined=Join::where('user_id', $this->id )->where('group_id', $group_id)->first();
+        return (bool) $joined;
+    }
   
     
 }

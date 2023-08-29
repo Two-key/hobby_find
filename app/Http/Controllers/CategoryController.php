@@ -14,9 +14,9 @@ class CategoryController extends Controller
         return view('first.index')->with(['groups' => $category->get()]);  
 
     }
-    public function serch(Category $category)
+    public function search(Category $category)
     {
-        return view('first.serch')->with(['categories' => $category->get()]);
+        return view('first.search')->with(['categories' => $category->get()]);
         
     }
     public function group_show(Request $request)

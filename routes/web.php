@@ -37,7 +37,7 @@ require __DIR__.'/auth.php';
 
 Route::get('/', [CategoryController::class, 'index']);
 
-Route::get('/index/serch', [CategoryController::class ,'serch']);
+Route::get('/index/search', [CategoryController::class ,'search']);
 
 Route::get('/group_join', [GroupController::class, 'group_join']);
 
@@ -49,7 +49,7 @@ Route::get('/index/leader_create', [GroupController::class, 'leader_create']);
 
 Route::post('/groups', [GroupController::class, 'store']);
 
-Route::get('/categories/group_show', [CategoryController::class,'group_show'])->name('group.serch');
+Route::get('/categories/group_show', [CategoryController::class,'group_show'])->name('group.search');
 
 Route::get('/like/{group}', [LikeController::class,'like'])->name('like');
 
@@ -61,10 +61,8 @@ Route::get('/{group}', [PostController::class, 'group_content']);
 
 Route::post('/{group}/posts', [PostController::class, 'store']);
 
-//Route::post('/{group}/user_join', [GroupController::class,'user_join']);
-
-Route::post('/join', [JoinController::class, 'user_join'])->name('groups.user_join');
-
+//Route::delete('/{group}/user_join', [GroupController::class,'user_join']);
+Route::post('/{group}/user_join', [GroupController::class,'user_join']);
 
 Route::post('/add', [TalkController::class,'add'])->name('add');
 
@@ -72,15 +70,15 @@ Route::get('/result/ajax', [TalkController::class, 'getData']);
 
 Route::get('/group_talk/{group}', [TalkController::class, 'group_talk']);
 
-Route::post('/like', [LikeController::class, 'like'])->name('groups.like');
+Route::post('/like', [GroupController::class, 'like'])->name('groups.like');
 
-Route::get('posts/{post}/post_edit', [PostController::class, 'post_edit']);
-Route::put('posts/{post}', [PostController::class, 'post_update']);
+Route::get('/posts/{post}/post_edit', [PostController::class, 'post_edit']);
+Route::put('/posts/{post}', [PostController::class, 'post_update']);
 Route::delete('/posts/{post}', [PostController::class,'post_delete']);
 
 Route::get('/{group}/leadergroup_show', [PostController::class, 'leadergroup_show']);
 
-Route::get('groups/{group}/group_edit', [GroupController::class, 'group_edit']);
-Route::put('groups/{group}', [GroupController::class, 'group_update']);
+Route::get('/groups/{group}/group_edit', [GroupController::class, 'group_edit']);
+Route::put('/groups/{group}/edit', [GroupController::class, 'group_update']);
 Route::delete('/groups/{group}', [GroupController::class,'group_delete']);
 

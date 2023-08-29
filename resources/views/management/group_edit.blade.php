@@ -2,10 +2,10 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>Blog</title>
+        <title>GroupEdit</title>
     </head>
     <body>
-        <form action="/groups/{{ $group->id }}" method="POST">
+        <form action="/groups/{{ $group->id }}/edit" method="POST">
             @csrf
             @method('PUT')
             <div class='content__title'>
