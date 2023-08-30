@@ -13,13 +13,13 @@
                 <nav class="header-nav-item">
                     <ul class="flex mx-10 block text-green-500 h-20 leading-10 mt-px">
                         <li class="text-2xl mt-6 mr-5"><a class="like-group" href="/index/like">気になる</a></li>
-                        <li class="text-2xl mt-6 mr-2"><a class="my-create-group" href="/index/leader_create">自分で作成したアプリ</a></li>
+                        <li class="text-2xl mt-6 mr-2"><a class="my-create-group" href="/index/leader_create">マイグループ</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-        <main class = "py-20 text-blue-950 bg-cyan-200">
-        <h2 class="text-3xl font-bold underline ml-96 mt-28">趣味を探す？楽しむ？仲間を集める？</h2>
+        <main class = "py-20 text-blue-950 bg-cyan-200 h-screen">
+        <h2 class="text-3xl font-bold underline ml-96 mt-24">趣味を探す？楽しむ？仲間を集める？</h2>
 
                 <h3 class='text-2xl ml-96 mt-11'><a href="/index/search">➣趣味を探す</a>
                 
@@ -29,7 +29,7 @@
                 
                 </h3>
         </main>
-        <footer class = "absolute h-20 bg-indigo-950 flex items-center w-full">
+        <footer class = "absolute h-20 bg-indigo-950 flex items-center w-full bottom-0">
             <p class= "text-green-500 mx-auto">hobby_find</p>
         </footer>
     </body>
