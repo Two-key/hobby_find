@@ -17,5 +17,4 @@ class JoinController extends Controller
         $join->save();
         return back();
     }
-    
 }

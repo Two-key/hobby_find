@@ -13,17 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        /**Schema::create('joins', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('group_id');
-            $table->timestamps();
-        });*/
         Schema::create('joins', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')
-                ->constrained() //userテーブルのidカラムを参照するconstrainedメソッド
-                ->onDelete('cascade'); //削除時のオプション
+                ->constrained()
+                ->onDelete('cascade');
             $table->foreignId('group_id')
                ->constrained()
                ->onDelete('cascade');

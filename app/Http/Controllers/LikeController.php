@@ -17,5 +17,4 @@ class LikeController extends Controller
         $like->save();
         return back();
     }
-    
 }

@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>Index</title>
-        <!-- Fonts -->
+        @vite('resources/css/app.css')
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>趣味を探す？楽しむ？仲間を集める？</h1>
+        <h1 class="text-3xl font-bold underline">趣味を探す？楽しむ？仲間を集める？</h1>
 
                 <h2 class='title'><a href="/index/search">趣味を探す</a>
                 

@@ -61,7 +61,6 @@ Route::get('/{group}', [PostController::class, 'group_content']);
 
 Route::post('/{group}/posts', [PostController::class, 'store']);
 
-//Route::delete('/{group}/user_join', [GroupController::class,'user_join']);
 Route::post('/{group}/user_join', [GroupController::class,'user_join']);
 
 Route::post('/add', [TalkController::class,'add'])->name('add');

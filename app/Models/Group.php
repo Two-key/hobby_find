@@ -38,10 +38,7 @@ class Group extends Model
     public function isLikedBy($user): bool {
         return Like::where('user_id', $user->id)->where('group_id', $this->id)->first() !==null;
     }
-    
-    //後でViewで使う、いいねされているかを判定するメソッド。
     public function isJoinedBy($user): bool {
         return Join::where('user_id', $user->id)->where('group_id', $this->id)->first() !==null;
-    
-}
+    }
 }

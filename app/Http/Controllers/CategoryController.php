@@ -34,7 +34,6 @@ class CategoryController extends Controller
 
         $filteredGroups = $groups->get();
         return view('first.group_show')->with(['groups' => $filteredGroups, 'category'=> $selectedCategory]);
-        
     }
     
 }
