@@ -35,13 +35,14 @@
                     場所：◯◯
                     活動内容：◯◯な事をしています！"></textarea>
             </div>
-            <div class="text-3xl font-bold ml-auto mt-8 text-center">
+            <div class="text-3xl font-bold ml-auto mt-10 text-center">
                 <h2>Category</h2>
                 <select name="group[category_id]">
                     @foreach($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->category_name }}</option>
                     @endforeach
                     </select>
+            </div>
             <div class="text-3xl font-bold ml-auto mt-5 text-center">
             <input type="submit" value="作成"/>
             </div>

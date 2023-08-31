@@ -53,8 +53,6 @@
         
         <h4 class="text-3xl font-bold ml-60 pl-60 mr-0 pt-10"><a href="/groups/{{ $group->id }}/group_edit">タイトルや概要を変更する</a></h3>
         
-        
-        
           <div class='posts'>
               <h2 class='text-3xl font-bold pl-64 pt-10 border-solid border-b-2 border-orange-500'>過去の投稿</h2>
                 @foreach ($posts as $post)
@@ -74,8 +72,6 @@
                     </div>
                 </div>
             @endforeach
-             <div class='paginate'>
-        </div>
         </div>
         </main>
     </body>
