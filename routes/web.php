@@ -72,12 +72,12 @@ Route::get('/group_talk/{group}', [TalkController::class, 'group_talk']);
 Route::post('/like', [GroupController::class, 'like'])->name('groups.like');
 
 Route::get('/posts/{post}/post_edit', [PostController::class, 'post_edit']);
-Route::put('/posts/{post}', [PostController::class, 'post_update']);
+Route::put('/posts/{post}/index/leader_create', [PostController::class, 'post_update']);
 Route::delete('/posts/{post}', [PostController::class,'post_delete']);
 
 Route::get('/{group}/leadergroup_show', [PostController::class, 'leadergroup_show']);
 
 Route::get('/groups/{group}/group_edit', [GroupController::class, 'group_edit']);
-Route::put('/groups/{group}/edit', [GroupController::class, 'group_update']);
+Route::put('/groups/{group}/index/leader_create', [GroupController::class, 'group_update']);
 Route::delete('/groups/{group}', [GroupController::class,'group_delete']);
 

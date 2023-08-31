@@ -18,19 +18,19 @@ class CategorySeeder extends Seeder
     {
         DB::table('categories')->insert([
             'category_id' => '1',
-            'category_name' => 'Reading',
+            'category_name' => '読書',
             ]);
         DB::table('categories')->insert([
             'category_id' => '2',
-            'category_name' => 'Watching movies',
+            'category_name' => '映画',
             ]);
         DB::table('categories')->insert([
             'category_id' => '3',
-            'category_name' => 'Traveling',
+            'category_name' => '旅行',
             ]);
         DB::table('categories')->insert([
             'category_id' => '4',
-            'category_name' => 'Music',
+            'category_name' => '音楽',
             ]);
     }
 }

@@ -21,7 +21,7 @@ class PostController extends Controller
         return view('second.group_content')->with(['group' => $group, 'posts' => $post->get()]);  
     }
     
-    public function store(Post $post, PostRequest $request, Group $group) // 引数をRequestからPostRequestにする
+    public function store(Post $post, PostRequest $request, Group $group)
     {
         $input = $request['post'];
         $input += array('group_id'=> $group->id);
@@ -40,7 +40,7 @@ class PostController extends Controller
     {
         $input_post = $request['post'];
         $post->fill($input_post)->save();
-        return redirect($post->id);
+        return redirect('/index/leader_create');
     }
     public function post_delete(Post $post)
     {

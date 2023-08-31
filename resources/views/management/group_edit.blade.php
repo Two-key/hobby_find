@@ -21,7 +21,7 @@
             <div class="text-3xl font-bold ml-12 mt-16">
                 <button type="button" onclick="history.back()">戻る</button>
             </div>
-        <form action="/groups/{{ $group->id }}/edit" method="POST">
+        <form action="/groups/{{ $group->id }}/index/leader_create" method="POST">
             @csrf
             @method('PUT')
             <div class="text-3xl font-bold ml-auto text-center">

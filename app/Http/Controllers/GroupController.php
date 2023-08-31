@@ -34,12 +34,10 @@ class GroupController extends Controller
         $group->fill($input)->save();
         $input = $request['group_id'];
         $join=new Join();
-        $join->group_id=$request->group_id;
+        $join->group_id=$group->id;
         $join->user_id=Auth::user()->id;
         $join->save();
-        
-        return redirect('/group_show/' . $group->id, $join->id);
-        
+        return redirect('/');
     }
     public function group_show(Group $group)
     {
@@ -128,7 +126,7 @@ class GroupController extends Controller
         $input_group = $request['group'];
         $group->fill($input_group)->save();
 
-        return redirect($group->id);
+        return redirect('/index/leader_create');
     }
     
     public function group_delete(Group $group)

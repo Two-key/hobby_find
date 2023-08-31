@@ -25,7 +25,7 @@
             </div>
     <h1 class="text-4xl font-bold underline ml-80 mt-8 pl-48">投稿編集画面</h1>
     <div class="content">
-        <form action="/posts/{{ $post->id }}" method="POST">
+        <form action="/posts/{{ $post->id }}/index/leader_create" method="POST">
             @csrf
             @method('PUT')
             <div class="text-3xl font-bold ml-auto mt-8 text-center">
