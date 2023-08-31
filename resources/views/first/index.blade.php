@@ -12,8 +12,8 @@
                 <h1 class = "mx-2 text-4xl text-green-500 decoration-orange-50 font-bold"><a href="/">HOBBY-FIND</a></h1>
                 <nav class="header-nav-item">
                     <ul class="flex mx-10 block text-green-500 h-20 leading-10 mt-px">
-                        <li class="text-2xl mt-6 mr-5"><a class="like-group" href="/index/like">気になる</a></li>
-                        <li class="text-2xl mt-6 mr-2"><a class="my-create-group" href="/index/leader_create">マイグループ</a></li>
+                        <li class="text-2xl mt-6 mr-5 font-bold"><a class="like-group" href="/index/like">気になる</a></li>
+                        <li class="text-2xl mt-6 mr-2 font-bold"><a class="my-create-group" href="/index/leader_create">マイグループ</a></li>
                     </ul>
                 </nav>
             </div>

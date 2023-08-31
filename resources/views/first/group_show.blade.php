@@ -23,9 +23,9 @@
         <div class="text-3xl font-bold ml-14 mt-16">
             <button type="button" onclick="history.back()">戻る</button>
         </div>
-        <h1 class="text-4xl font-bold underline ml-80 mt-14 pl-36">{{ $category->category_name }}が好きな人の集まり</h1>
+        <h1 class="text-4xl font-bold underline ml-80 mt-14 pl-32">{{ $category->category_name }}が好きな人の集まり</h1>
         <h1 class="title">
-            <div class="text-4xl font-bold ml-80 mt-14 pl-64">
+            <div class="text-4xl font-bold ml-80 mt-14 pl-60">
             @foreach ($groups as $group)
                 <div class='title'>
                     <a href="/group_show/{{ $group->id }}">➣{{ $group->title }}</a>
