@@ -1,7 +1,4 @@
 <x-app-layout>
-    <x-slot name="header">
-        　index
-    </x-slot>
     <body>
         <header class = "fixed top-0 left-0 right-0 bg-indigo-950">
             <div class = "flex items-center justify-between">

@@ -1,7 +1,4 @@
 <x-app-layout>
-    <x-slot name="header">
-        　index
-    </x-slot>
     <body>
         <main class = "py-20 text-blue-950 bg-cyan-200 h-screen">
         <h2 class="text-3xl font-bold underline ml-96 mt-24">趣味を探す？楽しむ？仲間を集める？</h2>
