@@ -21,6 +21,7 @@ class GroupSeeder extends Seeder
             'category_id' => '1',
             'title' => '1グループ',
             'overview' => '私たちは読書好きなグループです',
+            'image_url' => 'https://res.cloudinary.com/dpbph7hyn/image/upload/v1692713967/tg6gnc5wmfwlvogzessu.png',
                 
          ]);
           DB::table('groups')->insert([
@@ -28,6 +29,7 @@ class GroupSeeder extends Seeder
             'category_id' => '2',
             'title' => '2グループ',
             'overview' => '私たちは映画好きなグループです',
+            'image_url' => 'https://res.cloudinary.com/dpbph7hyn/image/upload/v1693447427/gyvpucbt5kpcyzo40x2b.png',
                 
          ]);
          

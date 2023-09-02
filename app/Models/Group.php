@@ -13,7 +13,8 @@ class Group extends Model
     'title',
     'overview',
     'category_id',
-    'user_id'
+    'user_id',
+    'image_url',
 ];
     public function category()
     {
