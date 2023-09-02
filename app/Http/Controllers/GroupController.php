@@ -11,6 +11,7 @@ use App\Models\Join;
 use App\Models\User;
 use App\Models\Like;
 use App\Models\Leader;
+use Cloudinary;
 
 class GroupController extends Controller
 {
@@ -29,6 +30,8 @@ class GroupController extends Controller
     public function store(Request $request, Group $group, User $user, Join $join)
     {
         $input = $request['group'];
+        $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        $input += ['image_url' => $image_url]; 
         $user = Auth::id();
         $input['user_id'] = $user;
         $group->fill($input)->save();

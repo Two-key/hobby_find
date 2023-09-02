@@ -29,9 +29,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [CategoryController::class, 'index'])->name('index');
     Route::get('/index/search', [CategoryController::class ,'search']);
     Route::get('/group_join', [GroupController::class, 'group_join']);
-    Route::get('/index/like', [GroupController::class, 'group_like']);
+    Route::get('/index/like', [GroupController::class, 'group_like'])->name('group_like');
     Route::get('/index/create_group', [GroupController::class, 'create_group']);
-    Route::get('/index/leader_create', [GroupController::class, 'leader_create']);
+    Route::get('/index/leader_create', [GroupController::class, 'leader_create'])->name('leader_create');
     Route::post('/groups', [GroupController::class, 'store']);
     Route::get('/categories/group_show', [CategoryController::class,'group_show'])->name('group.search');
     Route::get('/like/{group}', [LikeController::class,'like'])->name('like');
