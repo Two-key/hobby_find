@@ -47,7 +47,7 @@
         
         <div class = "flex flex-row flex-wrap space-x-5 ml-32 pt-10">  
             @foreach ($posts as $post)
-                <div class="block max-w-[18rem] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                <div class="block max-w-xs rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                     <div class="relative overflow-hidden bg-cover bg-no-repeat">
                       <div class = "flex basis-auto right-0">  
                         <a href="/posts/{{ $post->id }}/post_edit"><button class = "bg-red-900 hover:bg-red-700 text-green-500 rounded w-10 h-10" type="button">編集</button></a>
@@ -58,7 +58,7 @@
                         </form>
                         </div>
                         <img 
-                            class="rounded-t-lg"
+                            class="rounded-t-lg max-h-48"
                             src="{{ $post->image_url }}" 
                             alt="画像が読み込めません。" />
                     </div>
