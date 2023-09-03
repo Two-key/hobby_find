@@ -3,9 +3,13 @@
     </head>
 <x-app-layout>
     <body>
-        <main class = "py-20 text-blue-950 bg-cyan-200 h-screen">
-            <div class="text-3xl font-bold ml-12 mt-16">
-                <button type="button" onclick="history.back()">戻る</button>
+        <main class = "py-20 text-blue-950">
+            <div class="pl-40">
+                <button type="button" onclick="history.back()" class="relative inline-block px-4 py-2 font-medium group">
+                    <span class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                    <span class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+                    <span class="relative text-black group-hover:text-white">戻る</span>
+                </button>
             </div>
         <h1 class="text-4xl font-bold underline ml-80 mt-8 pl-48">投稿を追加する</h1>
         <form action="/{{$group-> id}}/posts" method="POST" enctype="multipart/form-data">

@@ -32,5 +32,9 @@ class CategorySeeder extends Seeder
             'category_id' => '4',
             'category_name' => '音楽',
             ]);
+        DB::table('categories')->insert([
+            'category_id' => '5',
+            'category_name' => 'その他',
+            ]);
     }
 }
