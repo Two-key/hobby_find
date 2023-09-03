@@ -4,21 +4,25 @@
 <x-app-layout>
     <body>
         <main class = "py-20 text-blue-950">
-            <div class="text-3xl font-bold ml-12 mt-16">
-                <button type="button" onclick="history.back()">戻る</button>
+            <div class="pl-40">
+                <button type="button" onclick="history.back()" class="relative inline-block px-4 py-2 font-medium group">
+                    <span class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                    <span class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+                    <span class="relative text-black group-hover:text-white">戻る</span>
+                </button>
             </div>
         <form action="/groups" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="text-3xl font-bold ml-auto text-center">
-                <h2>グループ名</h2>
-                <input type="text" name="group[title]" placeholder="タイトル"/>
+            <h2 class="text-3xl font-bold ml-auto text-center">グループ名</h2>
+            <div class="text-2xl font-bold ml-auto text-center">
+                <input type="text" name="group[title]" placeholder="◯◯会"/>
             </div>
-            <h2>プロフィール画像</h2>
-            <div class="text-2xl font-bold ml-auto mt-8 text-center">
+            <h2 class="text-3xl font-bold ml-auto mt-8 text-center">プロフィール画像</h2>
+            <div class="text-2xl font-bold ml-auto mt-5 text-center">
                 <input type="file" name="image">
             </div>
             <div class="text-3xl font-bold ml-auto mt-8 text-center">
-                <h2>作りたいグループの概要</h2>
+                <h2>グループの概要</h2>
                 <textarea name="group[overview]" placeholder=
                 "参加人数：◯人
                     活動日：◯曜日
@@ -26,16 +30,16 @@
                     活動内容：◯◯な事をしています！"></textarea>
             </div>
             <div class="text-3xl font-bold ml-auto mt-10 text-center">
-                <h2>Category</h2>
+                <h2>カテゴリー</h2>
                 <select name="group[category_id]">
                     @foreach($categories as $category)
                     <option value="{{ $category->id }}">{{ $category->category_name }}</option>
                     @endforeach
-                    </select>
+                </select>
             </div>
-            <div class="text-3xl font-bold ml-auto mt-5 text-center">
-            <input type="submit" value="作成"/>
-            </div>
+            <div class="pl-60 ml-80 mt-10">
+            <button class = "bg-indigo-950 hover:bg-indigo-700 text-green-500 rounded w-40 h-14" type="submit">仲間集めを開始する</button>
+            </div> 
         </form>
        </main>
     </body>
