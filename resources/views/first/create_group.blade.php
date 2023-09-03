@@ -3,6 +3,15 @@
     </head>
 <x-app-layout>
     <body>
+        <h2 class ="pt-72 mt-80">
+            <div
+                class="bg-contain"
+                style="background-image: url('https://res.cloudinary.com/dpbph7hyn/image/upload/v1693753463/auto_ezs9wf.svg'); height: 250px"></div>
+            </div>
+        </h2>
+        <div
+            class="absolute bottom-0 left-0 right-0 top-10 h-fit w-full overflow-hidden bg-fixed"
+            style="background-color: rgba(0, 0, 255, 0)">
         <main class = "py-20 text-blue-950">
             <div class="pl-40">
                 <button type="button" onclick="history.back()" class="relative inline-block px-4 py-2 font-medium group">
@@ -38,9 +47,10 @@
                 </select>
             </div>
             <div class="pl-60 ml-80 mt-10">
-            <button class = "bg-indigo-950 hover:bg-indigo-700 text-green-500 rounded w-40 h-14" type="submit">仲間集めを開始する</button>
+            <button class = "bg-indigo-950 hover:bg-indigo-900 text-yellow-400 rounded w-40 h-14" type="submit">仲間集めを開始する</button>
             </div> 
         </form>
        </main>
+       </div> 
     </body>
 </x-app-layout>

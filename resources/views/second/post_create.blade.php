@@ -27,9 +27,9 @@
             <div class="text-2xl font-bold ml-auto mt-8 text-center">
                 <input type="file" name="image">
             </div>
-            <div class="text-3xl font-bold ml-auto mt-5 text-center">
-                <input type="submit" value="保存"/>
-            </div>
+            <div class="pl-60 ml-80 mt-10">
+            <button class = "bg-indigo-950 hover:bg-indigo-900 text-yellow-400 rounded w-40 h-14" type="submit">投稿を保存する</button>
+            </div> 
         </form>
         </main>
     </body>
