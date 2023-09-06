@@ -45,12 +45,12 @@
                         </form>
                         <a href="/{{ $group->id }}/leadergroup_show">
                         <img 
-                            class="rounded-t-lg max-h-48"
+                            class="rounded-t-lg max-h-48 aspect-auto"
                             src="{{ $group->image_url }}"
                             alt="Skyscrapers" />
                     </div>
                     <div class="p-6">
-                        <p class="text-base text-neutral-600 dark:text-neutral-200">
+                        <p class="flex justify-center font-bold text-base text-neutral-600 dark:text-neutral-200">
                           {{ $group->title }}
                         </p>
                     </div>
