@@ -12,7 +12,7 @@
         <div
             class="absolute bottom-0 left-0 right-0 top-10 h-fit w-full overflow-hidden bg-fixed"
             style="background-color: rgba(0, 0, 255, 0)">
-        <main class = "py-20 text-blue-950">
+        <main class = "pt-20 text-blue-950">
             <div class="pl-40">
                 <button type="button" onclick="history.back()" class="relative inline-block px-4 py-2 font-medium group">
                     <span class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>

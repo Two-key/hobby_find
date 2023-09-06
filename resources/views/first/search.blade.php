@@ -31,7 +31,7 @@
                                 <option value="{{ $category->id }}">{{ $category->category_name }}</option>
                                 @endforeach
                             </select>
-                            <button class = "bg-indigo-950 hover:bg-indigo-700 text-green-500 rounded w-20 h-10" type="submit">探す</button>
+                            <button class = "bg-indigo-950 hover:bg-indigo-700 text-yellow-400 rounded w-20 h-10" type="submit">探す</button>
                         </div>
                     </form>
                 </div>
