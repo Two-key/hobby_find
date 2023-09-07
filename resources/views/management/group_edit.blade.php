@@ -20,7 +20,7 @@
                     <span class="relative text-black group-hover:text-white">戻る</span>
                 </button>
             </div>
-        <form action="/groups/{{ $group->id }}/index/leader_create" method="POST">
+        <form action="/groups/{{ $group->id }}/index/leader_create" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="text-3xl font-bold ml-auto text-center">
