@@ -121,12 +121,21 @@ class GroupController extends Controller
     
     public function group_edit(Group $group, Category $category)
     {
-        return view('management.group_edit')->with(['group' => $group, 'categories' => $category->get()]);
+        return view('management.group_edit')->with(['group' => $group, 'categories' => $category ->get()]);
     }
     
     public function group_update(Request $request, Group $group)
     {
+        $input = $request['group'];
+        $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        $input += ['image_url' => $image_url];
+        $user = Auth::id();
+        $input['user_id'] = $user;
+        $group->fill($input)->save();
+        $input = $request['group_id'];
+         
         $input_group = $request['group'];
+        
         $group->fill($input_group)->save();
 
         return redirect('/index/leader_create');

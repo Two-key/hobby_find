@@ -25,7 +25,7 @@
             </div>
         <h1 class="text-4xl font-bold underline ml-80 mt-14 pb-10 pl-52">気になるグループ</h1>
         
-        <div class = "flex basis-auto space-x-5 ml-5 pt-24">  
+        <div class = "flex basis-auto space-x-5 ml-5">  
             @foreach ($groups as $group)
             <a href="/group_show/{{ $group->id }}">
                 <div class="block max-w-xs rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">

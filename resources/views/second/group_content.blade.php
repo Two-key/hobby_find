@@ -3,8 +3,9 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <script src="{{ asset('js/like.js') }}" defer></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
         <style>
         .liked {
             color: pink;
@@ -22,7 +23,7 @@
         <div
             class="absolute bottom-0 left-0 right-0 top-10 h-fit w-full overflow-hidden bg-fixed"
             style="background-color: rgba(0, 0, 255, 0)">
-        <main class = "pt-20 text-blue-950">
+        <main class = "pt-12 text-blue-950">
             <div class="pl-40">
                 <button type="button" onclick="history.back()" class="relative inline-block px-4 py-2 font-medium group">
                     <span class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
@@ -34,11 +35,11 @@
             @auth
                 @if (!$group->isLikedBy(Auth::user())) 
                 <span class="likes">
-                    <i class="fas fa-heart like-toggle" data-group-id="{{ $group->id }}"></i>
+                    <i class="fas fa-heart like-toggle fa-2x" data-group-id="{{ $group->id }}"></i>
                 </span>
                 @else
                 <span class="likes">
-                    <i class="fas fa-heart heart like-toggle liked" data-group-id="{{ $group->id }}"></i>
+                    <i class="fas fa-heart heart like-toggle liked fa-2x" data-group-id="{{ $group->id }}"></i>
                 </span>
                 @endif
             @endauth
@@ -47,7 +48,8 @@
                     <i class="fas fa-heart heart"></i>
                 </span>
             @endguest
-            
+            </h1>
+            <h1 class='text-2xl pr-32 text-right'> 
             @if (!$user->isJoined($group->id))
             <form action="/{{$group->id}}/user_join" method="POST">
                 @csrf
@@ -60,11 +62,11 @@
             </form>
             @endif
             
-            <button class = "text-xs bg-indigo-950 hover:bg-indigo-700 text-yellow-400 rounded w-32 h-10" type="submit" onclick="location.href='/{{$group->id}}/group_talk'">トークする</button>
+            <button class = "text-xs bg-indigo-950 hover:bg-indigo-700 text-yellow-400 rounded w-32 h-10" type="submit" onclick="location.href='/group_talk/{{$group->id}}'">トークする</button>
             </h1>
             
             
-            <h2 class="text-6xl font-bold flex justify-center underline decoration-yellow-400 underline-offset-8">
+            <h2 class="text-5xl font-bold flex justify-center underline decoration-yellow-400 underline-offset-8">
                 {{ $group->title }}
             </h2>
             <div class="content">

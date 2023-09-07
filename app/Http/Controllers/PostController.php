@@ -36,8 +36,15 @@ class PostController extends Controller
         return view('management.post_edit')->with(['post' => $post]);
     }
     
-    public function post_update(PostRequest $request, Post $post)
+    public function post_update(PostRequest $request, Post $post, Group $group)
     {
+        $input = $request['post'];
+        $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        $input += ['image_url' => $image_url];
+
+        $post->fill($input)->save();
+        
+        
         $input_post = $request['post'];
         $post->fill($input_post)->save();
         return redirect('/index/leader_create');
