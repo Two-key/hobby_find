@@ -33,7 +33,7 @@
                 <img 
                     class="rounded-t-lg max-h-48 aspect-auto"
                     src="{{ $group->image_url }}"
-                    alt="Skyscrapers" />
+                    alt="画像を表示できません" />
                 </div>
                 <div class="p-6">
                     <p class="font-bold text-base text-neutral-600 dark:text-neutral-200">

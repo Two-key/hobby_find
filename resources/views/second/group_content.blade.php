@@ -86,7 +86,7 @@
                     <img 
                         class="rounded-t-lg max-h-48 aspect-auto"
                         src="{{ $post->image_url }}"
-                        alt="Skyscrapers" />
+                        alt="画像を表示できません" />
                     </div>
                     <div class="p-6">
                         <p class="flex justify-center bg-white rounded border-2 border-yellow-400 font-bold text-base text-indigo-950 dark:text-indigo-950">
