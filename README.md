@@ -1,66 +1,83 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="right"><a href="https://twitter.com/so_webeng" target="_blank"><img src="https://img.shields.io/twitter/url?label=%E9%96%8B%E7%99%BA%E8%80%85%E3%81%AETweet%E3%82%92%E8%A6%8B%E3%82%8B&style=social&url=https%3A%2F%2Ftwitter.com%2Fso_webeng" alt="Developer's Twitter account"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+<p align="center"><b>趣味仲間と航海に出よう</b></p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center"><a href="https://stark-journey-71646.herokuapp.com" target="_blank"><img src="https://stark-journey-71646.herokuapp.com/img/c5caaa1a.png" width="400"></a></p>
+<h1 align="center">Hobby_Find</h1>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+##  制作背景
+このアプリは自己紹介で困った経験を基にその構想が生まれました．<br><br>
+「あなたの趣味は何ですか？」<br><br>
+自分の趣味に自信を持って、この質問にスパッと答えることができるようになることを目的に，このアプリを制作しました.<br>
+ユーザーが自分の「好き」を発見し、趣味仲間を増やして，<b>老若男女関係なく、「楽しいを共有できる場所」になる</b>ことを願っています．
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+##  概要
+「趣味や仲間が欲しいあなたに」<br>
+Hobby_Findは以下に示すポイントに根差して設計されています．
+- カテゴリー別検索機能
+- いいね機能
+- シンプルで使いやすいUI
 
-## Learning Laravel
+「自分の「好き」を発見し、趣味仲間と「好き」を楽しむこと」をコンセプトとしています．<br><br>
+<a href="https://hobbyfind-e3283a7fee5e.herokuapp.com/" target="_blank">アプリへGO</a>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+##  開発環境
+<b>使用言語：</b><br>
+- PHP
+- HTML
+- CSS(Tailwind)
+- JavaScript(jQuery)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+<b>環境：</b><br>
+- Laravel(ver.8)
+- AWS(EC2＋Cloud9＋S3)
+- MySQL(MariaDB)
+- Github
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<b>デプロイ：</b><br>
+- Heroku
 
-## Laravel Sponsors
+##  データ構成
+<b>「テーブル構成・リレーション」と「テーブル包含関係」：</b><br>
+<img src="https://res.cloudinary.com/dpbph7hyn/image/upload/v1694143995/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_228_rxzulk.png" width="225">　<img src="https://user-images.githubusercontent.com/55343913/176453687-f0668515-1e0d-4d2c-9ec2-d25edff41bc9.jpg" width="225">
+<br><b>各テーブル詳細：</b><br>
+<img src="https://res.cloudinary.com/dpbph7hyn/image/upload/v1694144761/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_236_pg7ae4.png" width="500">
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+##  機能
+- CRUD
+- ログイン
+- 画像アップロード＆表示
+- Breezeログイン
+- 趣味のカテゴリー別検索
+- いいね機能
+- 投稿機能
+- グループ機能
 
-### Premium Partners
+##  こだわり
+<b>冒険に出るワクワク感を高める背景画像とボタン：</b><br>
+Canvaを用いて、背景画像やロゴを自作しました。また、Tailwindを用いて動くボタンを設定し，ワクワク感を演出しています<br><br>
+<img src="https://res.cloudinary.com/dpbph7hyn/image/upload/v1694142040/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_226_fqyxtb.png" width="225"><br>
+<b>シンプルでみやすいUI：</b><br>
+投稿やグループ一覧を表示する際には、一つ一つをカード化することによってまとまりを作り、見やすく工夫しています<br><br>
+<img src="https://res.cloudinary.com/dpbph7hyn/image/upload/v1694142145/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_227_saam1j.png" width="225">
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+##  楽しみ方
+<b>自分の趣味を探したいユーザー：</b><br>
+自分の「好き」を探したいユーザーは「趣味を探す」からカテゴリー別検索していくことで，自分の興味が漠然としている人でも、キーワード検索する必要がないため、心配ありません．<br>
+いいね機能を利用することによって、後から気になるグループを見返すことができます。ユーザーにより作成される自分に合ったグループを見つけることができます．<br><br>
+<b>趣味仲間を探したいユーザー：</b><br>
+趣味を探す中で、自分の好みのグループが見つからなかった場合は、自分でグループを作成し、仲間を募集することができます<br>
+自分が作成したグループでは、自由にプロフィールや投稿内容を編集・削除することができます。<br>
 
-## Contributing
+##  今後の計画
+- グループトーク機能の実装
+- クリック回数履歴の取得と利用（アナリティクスの作成）
+- オススメ機能の実装
+- ページの読み込み速度の向上
+- カレンダー機能を追加し、グループの予定をシェア
+- 関連投稿の表示
+- 投稿評価（いいね）とそれによる投稿並び替え
+- 趣味の文字検索機能の追加
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<p align="right"><a href="https://twitter.com/so_webeng" target="_blank"><img src="https://img.shields.io/twitter/url?label=%E9%96%8B%E7%99%BA%E8%80%85%E3%81%AETweet%E3%82%92%E8%A6%8B%E3%82%8B&style=social&url=https%3A%2F%2Ftwitter.com%2Fso_webeng" alt="Developer's Twitter account"></a></p>

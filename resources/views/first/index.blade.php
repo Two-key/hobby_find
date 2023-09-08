@@ -7,7 +7,7 @@
             <h2 class ="pl-40 ml-60">
             <img src="https://res.cloudinary.com/dpbph7hyn/image/upload/v1693632321/Hobby%E3%83%AD%E3%82%B41_tuxbiu.png" width="500" height="100">
             </h2>
-            <div class= "text-sm text-indigo-700 text-center">ー趣味探しの航海に出ようー</div>
+            <div class= "text-sm text-indigo-700 text-center">ー趣味仲間と航海に出ようー</div>
             <div class= pl-20>
             <div
                 class="bg-contain"
