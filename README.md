@@ -40,7 +40,7 @@ Hobby_Findは以下に示すポイントに根差して設計されています�
 
 ##  データ構成
 <b>「テーブル構成・リレーション」と「テーブル包含関係」：</b><br>
-<img src="https://res.cloudinary.com/dpbph7hyn/image/upload/v1694143995/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_228_rxzulk.png" width="225">　<img src="https://user-images.githubusercontent.com/55343913/176453687-f0668515-1e0d-4d2c-9ec2-d25edff41bc9.jpg" width="225">
+<img src="https://res.cloudinary.com/dpbph7hyn/image/upload/v1694143995/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_228_rxzulk.png" width="225">
 <br><b>各テーブル詳細：</b><br>
 <img src="https://res.cloudinary.com/dpbph7hyn/image/upload/v1694144761/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_236_pg7ae4.png" width="500">
 
