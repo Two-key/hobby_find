@@ -31,7 +31,7 @@ Hobby_Findは以下に示すポイントに根差して設計されています�
 
 <b>環境：</b><br>
 - Laravel(ver.8)
-- AWS(EC2＋Cloud9＋S3)
+- AWS(EC2＋Cloud9)
 - MySQL(MariaDB)
 - Github
 
