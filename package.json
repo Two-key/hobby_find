@@ -19,6 +19,9 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
-        "tw-elements": "^1.0.0-rc.1"
+        "laravel-echo": "^1.15.3",
+        "pusher-js": "^8.3.0",
+        "tw-elements": "^1.0.0-rc.1",
+        "vue": "^3.3.4"
     }
 }

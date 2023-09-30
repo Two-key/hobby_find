@@ -42,4 +42,8 @@ class Group extends Model
     public function isJoinedBy($user): bool {
         return Join::where('user_id', $user->id)->where('group_id', $this->id)->first() !==null;
     }
+    public function group_talk()
+    {
+        return $this->belongsTo(Message::class);
+    }
 }
