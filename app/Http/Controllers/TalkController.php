@@ -3,50 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Models\Comment;
+use App\Models\Group;
+use App\Events\Message; // Messageモデルをインポート
 use Illuminate\Support\Facades\Auth;
 
 class TalkController extends Controller
 {
-    public function getData()
-{
-    $comments = Comment::orderBy('created_at', 'desc')->get();
-    $json = ["comments" => $comments];
-    return response()->json($json);
+    public function group_talk(Request $request, Group $group) // Requestオブジェクトを引数に追加
+    {
+        // リクエストからユーザー名とメッセージを取得
+        $username = $request->input('username');
+        $message = $request->input('message');
+        
+        // App\Events\Messageをインスタンス化する際に2つの引数を渡す
+        $messageEvent = new Message($username, $message);
+        
+        broadcast($messageEvent)->toOthers();
+        
+        return view('third.group_talk')->with(['groups' => $group]);
+    }
 }
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function group_talk()
-    {
-        $comments = Comment::get();
-        return view('third.group_talk', ['comments' => $comments]);
-    }
-    
-    public function add(Request $request, Comment $comment)
-    {
-        $user = Auth::user();
-        $comment = $request->input('comment');
-        Comment::create([
-            'login_id' => $user->id,
-            'name' => $user->name,
-            'comment' => $comment
-    ]);
-    return redirect('/group_talk/ . ');
-    }
-
-}
