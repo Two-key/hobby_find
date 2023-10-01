@@ -23,11 +23,11 @@
         <form action="/groups" method="POST" enctype="multipart/form-data">
             @csrf
             <h2 class="text-3xl font-bold ml-auto text-center">グループ名</h2>
-            <div class="text-2xl font-bold ml-auto text-center">
+            <div class="max-w-xs text-2xl font-bold mx-auto text-center">
                 <input type="text" name="group[title]" placeholder="◯◯会"/>
             </div>
             <h2 class="text-3xl font-bold ml-auto mt-8 text-center">プロフィール画像</h2>
-            <div class="text-2xl font-bold ml-auto mt-5 text-center">
+            <div class="max-w-xs text-2xl font-bold mx-auto mt-5 text-center">
                 <input type="file" name="image">
             </div>
             <div class="text-3xl font-bold ml-auto mt-8 text-center">

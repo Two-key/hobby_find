@@ -20,11 +20,11 @@
                         <span class="relative text-black group-hover:text-white">戻る</span>
                     </button>
                 </div>
-                <h1 class="text-4xl font-bold underline ml-96 pl-36">趣味を探す</h1>
+                <h1 class="mx-auto text-indigo-950 text-4xl font-bold underline">趣味を探す</h1>
                 <div class="ml-72 pl-40 pt-5">
                     <form action="{{ route('group.search') }}" method="GET">
                         @csrf
-                        <h2 class = "text-2xl mt-14 mb-4">気になるカテゴリーを選んで探してみよう！</h2>
+                        <h2 class = "mx-auto text-2xl mt-14 mb-4">気になるカテゴリーを選んで探してみよう！</h2>
                         <div class="pl-20 mt-5">
                             <select name="category">
                                 @foreach($categories as $category)

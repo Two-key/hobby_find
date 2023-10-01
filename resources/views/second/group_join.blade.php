@@ -23,7 +23,7 @@
                     <span class="relative text-black group-hover:text-white">戻る</span>
                 </button>
             </div>
-        <h1 class="text-4xl font-bold underline ml-80 mt-14 pb-10 pl-44">仲間入りしたグループ</h1>
+        <h1 class="text-indigo-950 text-4xl font-bold underline flex justify-center mt-14 pb-10">仲間入りしたグループ</h1>
         <div class = "flex basis-auto space-x-5 ml-5">  
             @foreach ($groups as $group)
             <a href="/group_show/{{ $group->id }}">

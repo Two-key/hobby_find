@@ -41,7 +41,7 @@
         <h1 class="text-2xl pr-20 text-right">
             <button class = "text-xs bg-indigo-950 hover:bg-indigo-700 text-yellow-400 rounded w-32 h-10" type="submit" onclick="location.href='/{{$group->id}}/post_create'">投稿を追加する</button>
         </h1>
-        <h1 class="text-6xl font-bold flex justify-center underline decoration-yellow-400 underline-offset-8">
+        <h1 class="text-indigo-950 text-6xl font-bold flex justify-center underline decoration-yellow-400 underline-offset-8">
             {{ $group->title }}
         </h1>
         <div class="content">

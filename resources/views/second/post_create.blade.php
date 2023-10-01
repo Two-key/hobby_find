@@ -20,10 +20,10 @@
                     <span class="relative text-black group-hover:text-white">戻る</span>
                 </button>
             </div>
-        <h1 class="text-4xl font-bold underline ml-80 mt-8 pl-48">投稿を追加する</h1>
+        <h1 class="text-indigo-950 flex justify-center text-4xl font-bold underline mt-8">投稿を追加する</h1>
         <form action="/{{$group-> id}}/posts" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="text-3xl font-bold ml-auto mt-8 text-center">
+            <div class="max-w-xs text-3xl font-bold mx-auto mt-8 text-center">
                 <h2>タイトル</h2>
                 <input type="text" name="post[title]" placeholder="◯◯会" value="{{ old('post.title') }}"/>
                 <p class="title__error" style="color:red">{{ $errors->first('post.title') }}</p>
@@ -33,7 +33,7 @@
                 <textarea name="post[comment]" placeholder="今日は◯◯をしました！">{{ old('post.comment') }}</textarea>
                 <p class="comment__error" style="color:red">{{ $errors->first('post.comment') }}</p>
             </div>
-            <div class="text-2xl font-bold ml-auto mt-8 text-center">
+            <div class="max-w-xs text-2xl font-bold mx-auto mt-8 text-center">
                 <input type="file" name="image">
             </div>
             <div class="pl-60 ml-80 mt-10">

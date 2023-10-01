@@ -20,20 +20,20 @@
                     <span class="relative text-black group-hover:text-white">戻る</span>
                 </button>
             </div>
-    <h1 class="text-4xl font-bold underline ml-80 mt-8 pl-48">投稿編集画面</h1>
+    <h1 class="flex justify-center text-indigo-950 text-4xl font-bold underline mt-8">投稿編集画面</h1>
     <div class="content">
         <form action="/posts/{{ $post->id }}/index/leader_create" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <div class="text-3xl font-bold ml-auto mt-8 text-center">
+            <div class="max-w-xs text-3xl font-bold mx-auto mt-8 text-center">
                 <h2>タイトル</h2>
                 <input type='text' name='post[title]' value="{{ $post->title }}">
             </div>
-            <div class="text-3xl font-bold ml-auto mt-8 text-center">
+            <div class="max-w-xs text-3xl font-bold mx-auto mt-8 text-center">
                 <h2>内容</h2>
                 <input type='text' name='post[comment]' value="{{ $post->comment }}">
             </div>
-            <div class="text-2xl font-bold ml-auto mt-8 text-center">
+            <div class="max-w-xs text-2xl font-bold mx-auto mt-8 text-center">
                 <input type="file" name="image">
             </div>
             <div class="pl-60 ml-80 mt-10">

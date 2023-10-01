@@ -2,10 +2,11 @@
     <title>Talk - Hobby_Find</title>
 </head>
 <x-app-layout>
-    <body class="bg-gray-200 font-sans h-max">
+    <body class="mt-5 bg-white font-sans h-max">
         <div
             class="absolute bottom-0 left-0 right-0 top-10 h-fit w-full overflow-hidden bg-fixed"
             style="background-color: rgba(0, 0, 255, 0)">
+        </div>
         <main class = "py-10 text-blue-950 h-max">
             <div class="pl-40">
                 <button type="button" onclick="history.back()" class="relative inline-block px-4 py-2 font-medium group">
@@ -14,11 +15,11 @@
                     <span class="relative text-black group-hover:text-white">戻る</span>
                 </button>
             </div>
-            <h1 class="text-5xl font-bold flex justify-center underline decoration-yellow-400 underline-offset-8">
+            <h1 class="text-indigo-950 text-5xl font-bold flex justify-center underline decoration-yellow-400 underline-offset-8">
                 {{ $group->title }}
             </h1>
                    
-        <div class="">
+        
             <form action="/{{$group-> id}}/messages" method="POST">
             @csrf
             <div class = "flex-1 py-2 px-4">
@@ -29,7 +30,9 @@
                 <input type="text" name="message[message]" placeholder="入力してください…" value="{{ old('message.message') }}"/>
                 <p class="comment__error" style="color:red">{{ $errors->first('message.message') }}</p>
             </div>
-                <button type="submit" class= "text-yellow-400 bg-indigo-950 flex justify-center">送信</button>
+            <div class="flex justify-center">
+                <button type="submit" class= "bg-indigo-950 hover:bg-indigo-700 text-yellow-400 rounded w-40 h-14">送信</button>
+            </div>
             </form>
               <div class="">
                 @if (Auth::check())
@@ -62,7 +65,7 @@
        
         </main>
         </div>
-        </div>
+        
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </x-app-layout>
