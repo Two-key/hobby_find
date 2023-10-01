@@ -12,27 +12,7 @@ import {
   initTE,
 } from "tw-elements";
 
-initTE({ Carousel });
-
-import { createApp } from 'vue';
-import axios from 'axios';
-import Echo from 'laravel-echo';
-
-// その他のインポートと設定
-
-const app = createApp({});
-
-// Laravel Echoの初期化
-window.Echo = new Echo({
-    broadcaster: 'pusher',
-    key: process.env.MIX_PUSHER_APP_KEY, // .envファイルから取得するか、直接設定
-    cluster: process.env.MIX_PUSHER_APP_CLUSTER, // 同様に.envファイルから取得するか、直接設定
-    // その他のオプション
-});
-
-// その他のコード
-
-app.mount('#app');
+const { default: axios } = require('axios');
 
 require('./bootstrap');
 
@@ -77,4 +57,3 @@ window.Echo.channel('chat')
         message_el.innerHTML += '<div class="message"><strong>' + e.username + ':</strong> ' + e.message + '</div>';
         // console.log(e);
     });
-    
