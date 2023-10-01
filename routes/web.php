@@ -6,9 +6,9 @@ use App\Http\Controllers\GroupController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\TalkController;
 use Illuminate\Support\Facades\Route;
-use App\Events\Message;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+//use App\Events\Message;
+//use Illuminate\Http\Request;
+//use Illuminate\Http\Response;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,8 +43,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/{group}', [PostController::class, 'group_content'])->whereNumber('group');
     Route::post('/{group}/posts', [PostController::class, 'store']);
     Route::post('/{group}/user_join', [GroupController::class,'user_join']);
-    Route::get('/group_talk/{group}', [TalkController::class, 'group_talk']);
-    Route::post('/send-message', [TalkController::class, 'group_talk']);
+    Route::get('/group_talk/{group}', [TalkController::class, 'group_talk'])->name('group_talk');
+
+    Route::post('/{group}/messages', [TalkController::class, 'send_message']);
     Route::post('/like', [GroupController::class, 'like'])->name('groups.like');
     Route::get('/posts/{post}/post_edit', [PostController::class, 'post_edit']);
     Route::put('/posts/{post}/index/leader_create', [PostController::class, 'post_update']);

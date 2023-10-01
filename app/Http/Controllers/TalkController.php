@@ -4,23 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Group;
-use App\Events\Message; // Messageモデルをインポート
+use App\Models\Message;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\MessageRequest;
 
 class TalkController extends Controller
 {
-    public function group_talk(Request $request, Group $group) // Requestオブジェクトを引数に追加
+    public function send_message(Message $message,Request $request, Group $group)
     {
-        // リクエストからユーザー名とメッセージを取得
-        $username = $request->input('username');
-        $message = $request->input('message');
-        
-        // App\Events\Messageをインスタンス化する際に2つの引数を渡す
-        $messageEvent = new Message($username, $message);
-        
-        broadcast($messageEvent)->toOthers();
-        
-        return view('third.group_talk')->with(['groups' => $group]);
+        $input = $request['message'];
+        $input += array('group_id'=> $group->id);
+        $user = Auth::id();
+        $input['user_id'] = $user;
+        $message->fill($input)->save();
+        return redirect()->route('group_talk', ['group' => $group]);
+    }
+    public function group_talk(Message $message, Group $group)
+    {
+        $messages = Message::all();
+        return view('third.group_talk')->with(['messages' => $messages, 'group' => $group]);
     }
 }
 
