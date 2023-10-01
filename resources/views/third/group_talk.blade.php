@@ -36,7 +36,7 @@
             </form>
               <div class="">
                 @if (Auth::check())
-                <div class="flex mt-7 ml-96 pl-96">
+                <div class="flex mt-7 ml-72 pl-96">
                   <div class="max-w-full max-h-full flex-col ml-60">
                     @foreach ($messages as $message) 
                                 <div class= "bg-clip-padding mt-7">

@@ -23,7 +23,7 @@ class PostSeeder extends Seeder
             ]);
         DB::table('posts')->insert([
             'title' => '映画鑑賞会',
-            'comment' => 'アクション映画を鑑賞しました',
+            'comment' => 'ホラー映画を鑑賞しました',
             'group_id' => '2',
             'image_url' => 'https://res.cloudinary.com/dpbph7hyn/image/upload/v1693447427/gyvpucbt5kpcyzo40x2b.png',
             ]);
