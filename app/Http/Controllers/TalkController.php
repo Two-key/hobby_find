@@ -17,11 +17,11 @@ class TalkController extends Controller
         $user = Auth::id();
         $input['user_id'] = $user;
         $message->fill($input)->save();
-        return redirect()->route('group_talk', ['group' => $group]);
+        return redirect()->route('group_talk', ['group' => $group->id]);
     }
     public function group_talk(Message $message, Group $group)
     {
-        $messages = Message::all();
+        $messages = Message::where('group_id', $group->id)->get();
         return view('third.group_talk')->with(['messages' => $messages, 'group' => $group]);
     }
 }

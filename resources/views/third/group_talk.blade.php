@@ -1,46 +1,68 @@
-<!DOCTYPE html>
 <head>
     <title>Talk - Hobby_Find</title>
 </head>
 <x-app-layout>
-    <body>
-        <main>
-            <div>
+    <body class="bg-gray-200 font-sans h-max">
+        <div
+            class="absolute bottom-0 left-0 right-0 top-10 h-fit w-full overflow-hidden bg-fixed"
+            style="background-color: rgba(0, 0, 255, 0)">
+        <main class = "py-10 text-blue-950 h-max">
+            <div class="pl-40">
                 <button type="button" onclick="history.back()" class="relative inline-block px-4 py-2 font-medium group">
                     <span class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
                     <span class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
                     <span class="relative text-black group-hover:text-white">戻る</span>
                 </button>
             </div>
-        <div class="app">
-            <header>
-                <h1>Let's Talk!</h1>
-            </header>
-            <div>
-            @foreach ($messages as $message) 
-                    <div>
-                        <p>
-                           {{ $message->username }}
-                        </p>
-                        <p>
-                            {{ $message->message }}
-                        </p>
-                    </div>
-            @endforeach
-            </div>
+            <h1 class="text-5xl font-bold flex justify-center underline decoration-yellow-400 underline-offset-8">
+                {{ $group->title }}
+            </h1>
+                   
+        <div class="">
             <form action="/{{$group-> id}}/messages" method="POST">
             @csrf
-            <div>
+            <div class = "flex-1 py-2 px-4">
                 <input type="text" name="message[username]" placeholder="名前を入れてください…" value="{{ old('message.username') }}"/>
                 <p class="username__error" style="color:red">{{ $errors->first('message.username') }}</p>
             </div>
+            <div class = "flex-1 py-2 px-4">
                 <input type="text" name="message[message]" placeholder="入力してください…" value="{{ old('message.message') }}"/>
                 <p class="comment__error" style="color:red">{{ $errors->first('message.message') }}</p>
-                <button type="submit">送信</button>
+            </div>
+                <button type="submit" class= "text-yellow-400 bg-indigo-950 flex justify-center">送信</button>
             </form>
-            
+              <div class="">
+                @if (Auth::check())
+                <div class="flex mt-7 ml-96 pl-96">
+                  <div class="max-w-full max-h-full flex-col ml-60">
+                    @foreach ($messages as $message) 
+                                <div class= "bg-clip-padding mt-7">
+                                    <p class= "relative inline-block text-yellow-400 bg-indigo-950 p-2.5 rounded-3xl right-0">
+                                        {{ $message->message }}
+                                    </p>
+                                    {{ $message->username }}
+                                </div>
+                    @endforeach
+                  </div>
+                </div>
+                @else
+                <div class="flex mt-7">
+                  <div class="max-w-full flex items-start flex-col">
+                    @foreach ($messages as $message) 
+                                <div class="absolute bg-clip-padding left-0">
+                                       {{ $message->username }}
+                                    <p class= "relative inline-block text-yellow-400 bg-indigo-950 p-2.5 rounded-3xl">
+                                        {{ $message->message }}
+                                    </p>
+                                </div>
+                    @endforeach
+                  </div>
+                </div>
+                @endif
+       
         </main>
-        </div> 
+        </div>
+        </div>
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </x-app-layout>

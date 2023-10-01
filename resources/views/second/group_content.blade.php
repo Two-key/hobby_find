@@ -50,19 +50,18 @@
             @endguest
             </h1>
             <h1 class='text-2xl pr-32 text-right'> 
-            @if (!$user->isJoined($group->id))
-            <form action="/{{$group->id}}/user_join" method="POST">
-                @csrf
-                <button class = "text-xs bg-indigo-950 hover:bg-indigo-700 text-yellow-400 rounded w-32 h-10" type="submit">仲間入りする</button>
-            </form>
-            @else
-            <form action="/{{$group->id}}/user_join" method="POST">
-                @csrf
-                <button class = "text-xs bg-indigo-950 hover:bg-indigo-700 text-yellow-400 rounded w-44 h-10" type="submit">グループへの参加を取り消す</button>
-            </form>
-            @endif
-            
-            <button class = "text-xs bg-indigo-950 hover:bg-indigo-700 text-yellow-400 rounded w-32 h-10" type="submit" onclick="location.href='/group_talk/{{$group->id}}'">トークする</button>
+                @if (!$user->isJoined($group->id))
+                <form action="/{{$group->id}}/user_join" method="POST">
+                    @csrf
+                    <button class = "text-xs bg-indigo-950 hover:bg-indigo-700 text-yellow-400 rounded w-32 h-10" type="submit">仲間入りする</button>
+                </form>
+                @else
+                <form action="/{{$group->id}}/user_join" method="POST">
+                    @csrf
+                    <button class = "text-xs bg-indigo-950 hover:bg-indigo-700 text-yellow-400 rounded w-44 h-10" type="submit">グループへの参加を取り消す</button>
+                </form>
+                <button class = "text-xs bg-indigo-950 hover:bg-indigo-700 text-yellow-400 rounded w-32 h-10" type="submit" onclick="location.href='/group_talk/{{$group->id}}'">トークする</button>
+                @endif
             </h1>
             
             
