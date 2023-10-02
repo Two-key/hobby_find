@@ -22,6 +22,7 @@ class TalkController extends Controller
     public function group_talk(Message $message, Group $group)
     {
         $messages = Message::where('group_id', $group->id)->get();
+        $loggedInUserId = auth()->id();
         return view('third.group_talk')->with(['messages' => $messages, 'group' => $group]);
     }
 }
