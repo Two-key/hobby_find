@@ -60,10 +60,10 @@ Canvaを用いて、背景画像やロゴを自作しました。また、Tailwi
 <img src="https://res.cloudinary.com/dpbph7hyn/image/upload/v1694142040/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_226_fqyxtb.png" width="225"><br>
 <b>シンプルでみやすいUI：</b><br>
 投稿やグループ一覧を表示する際には、一つ一つをカード化することによってまとまりを作り、見やすく工夫しています<br><br>
-<img src="https://res.cloudinary.com/dpbph7hyn/image/upload/v1694142145/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_227_saam1j.png" width="225">
+<img src="https://res.cloudinary.com/dpbph7hyn/image/upload/v1694142145/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_227_saam1j.png" width="225"><br>
 <b>仲間とのグループトーク：</b><br>
 趣味仲間と交流するために、グループトーク機能があり、コミュニケーションが円滑にとれます<br><br>
-<img src="https://res.cloudinary.com/dpbph7hyn/image/upload/v1696209827/%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%83%88%E3%83%BC%E3%82%AF_vac2oh.png" width="225">
+<img src="https://res.cloudinary.com/dpbph7hyn/image/upload/v1696209827/%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%83%88%E3%83%BC%E3%82%AF_vac2oh.png" width="225"><br>
 
 ##  楽しみ方
 <b>自分の趣味を探したいユーザー：</b><br>
