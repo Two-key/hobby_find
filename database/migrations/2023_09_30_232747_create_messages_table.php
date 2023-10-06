@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreignId('group_id');
             $table->string('username');
             $table->string('message');
