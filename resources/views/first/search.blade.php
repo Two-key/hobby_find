@@ -20,7 +20,7 @@
                         <span class="relative text-black group-hover:text-white">戻る</span>
                     </button>
                 </div>
-                <h1 class="mx-auto text-indigo-950 text-4xl font-bold underline">趣味を探す</h1>
+                <h1 class="flex justify-center text-indigo-950 text-4xl font-bold underline decoration-yellow-400">趣味を探す</h1>
                 <div class="ml-72 pl-40 pt-5">
                     <form action="{{ route('group.search') }}" method="GET">
                         @csrf

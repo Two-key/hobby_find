@@ -20,7 +20,7 @@
                     <span class="relative text-black group-hover:text-white">戻る</span>
                 </button>
             </div>
-        <h1 class="text-indigo-950 flex justify-center text-4xl font-bold underline mt-8">投稿を追加する</h1>
+        <h1 class="text-indigo-950 flex justify-center text-4xl font-bold underline decoration-yellow-400 mt-8">投稿を追加する</h1>
         <form action="/{{$group-> id}}/posts" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="max-w-xs text-3xl font-bold mx-auto mt-8 text-center">

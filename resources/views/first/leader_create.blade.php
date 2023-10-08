@@ -32,7 +32,7 @@
                 </button>
             </div>
             
-        <h1 class="text-indigo-950 text-4xl font-bold underline mt-5 pb-10 flex justify-center">自分がつくったグループ</h1>
+        <h1 class="text-indigo-950 text-4xl font-bold underline decoration-yellow-400 mt-5 pb-10 flex justify-center">自分がつくったグループ</h1>
         
         <div class = "flex basis-auto space-x-5 ml-5">  
             @foreach ($groups as $group)

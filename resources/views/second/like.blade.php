@@ -23,7 +23,7 @@
                     <span class="relative text-black group-hover:text-white">戻る</span>
                 </button>
             </div>
-        <h1 class="flex justify-center text-indigo-950 text-4xl font-bold underline mt-14 pb-10">気になるグループ</h1>
+        <h1 class="flex justify-center text-indigo-950 text-4xl font-bold underline decoration-yellow-400 mt-14 pb-10">気になるグループ</h1>
         
         <div class = "flex basis-auto space-x-5 ml-5">  
             @foreach ($groups as $group)
