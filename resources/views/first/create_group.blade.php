@@ -24,11 +24,13 @@
             @csrf
             <h2 class="text-3xl font-bold ml-auto text-center">グループ名</h2>
             <div class="max-w-xs text-2xl font-bold mx-auto text-center">
-                <input type="text" name="group[title]" placeholder="◯◯会"/>
+                <input type="text" name="group[title]" placeholder="◯◯会" value="{{ old('group.title')}}"/>
+                <p class="title__error" style="color:red">{{ $errors->first('group.title') }}</p>
             </div>
             <h2 class="text-3xl font-bold ml-auto mt-8 text-center">プロフィール画像</h2>
             <div class="max-w-xs text-2xl font-bold mx-auto mt-5 text-center">
-                <input type="file" name="image">
+                <input type="file" name="group[image]">
+                <p class="image__error" style="color:red">{{ $errors->first('group.image') }}</p>
             </div>
             <div class="text-3xl font-bold ml-auto mt-8 text-center">
                 <h2>グループの概要</h2>
@@ -36,7 +38,8 @@
                 "参加人数：◯人
                     活動日：◯曜日
                     場所：◯◯
-                    活動内容：◯◯な事をしています！"></textarea>
+                    活動内容：◯◯な事をしています！" value="{{ old('group.overview')}}"/></textarea>
+                    <p class="overview__error" style="color:red">{{ $errors->first('group.overview') }}</p>
             </div>
             <div class="text-3xl font-bold ml-auto mt-10 text-center">
                 <h2>カテゴリー</h2>

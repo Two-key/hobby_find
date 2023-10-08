@@ -26,14 +26,17 @@
             <div class="max-w-xs text-3xl font-bold mx-auto text-center">
                 <h2 class="text-3xl font-bold ml-auto text-center">グループ名</h2>
                 <input type='text' name='group[title]' value="{{ $group->title }}">
+                <p class="title__error" style="color:red">{{ $errors->first('group.title') }}</p>
             </div>
             <h2 class="text-3xl font-bold ml-auto mt-8 text-center">プロフィール画像</h2>
             <div class="max-w-xs text-2xl font-bold mx-auto mt-8 text-center">
-                <input type="file" name="image">
+                <input type="file" name="group[image]">
+                <p class="image__error" style="color:red">{{ $errors->first('group.image') }}</p>
             </div>
             <div class="text-3xl font-bold ml-auto mt-8 text-center">
                 <h2>グループ概要</h2>
                 <textarea name='group[overview]' value="{{ $group->overview }}"></textarea>
+                 <p class="overview__error" style="color:red">{{ $errors->first('group.overview') }}</p>
             </div>
             <div class="text-3xl font-bold ml-auto mt-8 text-center">
                 <h2>カテゴリー</h2>

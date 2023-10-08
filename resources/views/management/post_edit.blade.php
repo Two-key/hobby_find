@@ -28,13 +28,16 @@
             <div class="max-w-xs text-3xl font-bold mx-auto mt-8 text-center">
                 <h2>タイトル</h2>
                 <input type='text' name='post[title]' value="{{ $post->title }}">
+                <p class="title__error" style="color:red">{{ $errors->first('post.title') }}</p>
             </div>
             <div class="max-w-xs text-3xl font-bold mx-auto mt-8 text-center">
                 <h2>内容</h2>
                 <input type='text' name='post[comment]' value="{{ $post->comment }}">
+                <p class="comment__error" style="color:red">{{ $errors->first('post.comment') }}</p>
             </div>
             <div class="max-w-xs text-2xl font-bold mx-auto mt-8 text-center">
-                <input type="file" name="image">
+                <input type="file" name="post[image]">
+                <p class="image__error" style="color:red">{{ $errors->first('post.image') }}</p>
             </div>
             <div class="pl-60 ml-80 mt-10">
             <button class = "bg-indigo-950 hover:bg-indigo-700 text-yellow-400 rounded w-40 h-14" type="submit">投稿を更新する</button>

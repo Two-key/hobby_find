@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\GroupRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
 use App\Models\Group;
@@ -27,10 +28,10 @@ class GroupController extends Controller
     {
         return view('first.create_group')->with(['categories' => $category->get()]);
     }
-    public function store(Request $request, Group $group, User $user, Join $join)
+    public function store(GroupRequest $request, Group $group, User $user, Join $join)
     {
         $input = $request['group'];
-        $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        $image_url = Cloudinary::upload($request->file('group.image')->getRealPath())->getSecurePath();
         $input += ['image_url' => $image_url]; 
         $user = Auth::id();
         $input['user_id'] = $user;
@@ -124,10 +125,10 @@ class GroupController extends Controller
         return view('management.group_edit')->with(['group' => $group, 'categories' => $category ->get()]);
     }
     
-    public function group_update(Request $request, Group $group)
+    public function group_update(GroupRequest $request, Group $group)
     {
         $input = $request['group'];
-        $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        $image_url = Cloudinary::upload($request->file('group.image')->getRealPath())->getSecurePath();
         $input += ['image_url' => $image_url];
         $user = Auth::id();
         $input['user_id'] = $user;

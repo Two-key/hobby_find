@@ -34,7 +34,8 @@
                 <p class="comment__error" style="color:red">{{ $errors->first('post.comment') }}</p>
             </div>
             <div class="max-w-xs text-2xl font-bold mx-auto mt-8 text-center">
-                <input type="file" name="image">
+                <input type="file" name="post[image]">
+                <p class="image__error" style="color:red">{{ $errors->first('post.image') }}</p>
             </div>
             <div class="pl-60 ml-80 mt-10">
             <button class = "bg-indigo-950 hover:bg-indigo-900 text-yellow-400 rounded w-40 h-14" type="submit">投稿を保存する</button>

@@ -25,7 +25,7 @@ class PostController extends Controller
     {
         $input = $request['post'];
         $input += array('group_id'=> $group->id);
-        $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        $image_url = Cloudinary::upload($request->file('post.image')->getRealPath())->getSecurePath();
         $input += ['image_url' => $image_url];
         $post->fill($input)->save();
         return redirect('/');
@@ -39,7 +39,7 @@ class PostController extends Controller
     public function post_update(PostRequest $request, Post $post, Group $group)
     {
         $input = $request['post'];
-        $image_url = Cloudinary::upload($request->file('image')->getRealPath())->getSecurePath();
+        $image_url = Cloudinary::upload($request->file('post.image')->getRealPath())->getSecurePath();
         $input += ['image_url' => $image_url];
 
         $post->fill($input)->save();
