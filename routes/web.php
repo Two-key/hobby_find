@@ -6,9 +6,6 @@ use App\Http\Controllers\GroupController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\TalkController;
 use Illuminate\Support\Facades\Route;
-//use App\Events\Message;
-//use Illuminate\Http\Request;
-//use Illuminate\Http\Response;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
