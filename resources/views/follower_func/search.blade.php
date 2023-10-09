@@ -22,7 +22,7 @@
                 </div>
                 <h1 class="flex justify-center text-indigo-950 text-4xl font-bold underline decoration-yellow-400">趣味を探す</h1>
                 <div class="ml-72 pl-40 pt-5">
-                    <form action="{{ route('group.search') }}" method="GET">
+                    <form action="{{ route('groupShow') }}" method="GET">
                         @csrf
                         <h2 class = "mx-auto text-2xl mt-14 mb-4">気になるカテゴリーを選んで探してみよう！</h2>
                         <div class="pl-20 mt-5">

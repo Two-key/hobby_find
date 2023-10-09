@@ -16,12 +16,12 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>-->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex hover:bg-yellow-400">
-                    <x-nav-link :href="route('group_like')" :active="request()->routeIs('group_like')" class=text-yellow-400>
+                    <x-nav-link :href="route('showGroupLikePage')" :active="request()->routeIs('showGroupLikePage')" class=text-yellow-400>
                         {{ __('Favorite') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex hover:bg-yellow-400">
-                    <x-nav-link :href="route('leader_create')" :active="request()->routeIs('leader_create')" class=text-yellow-400>
+                    <x-nav-link :href="route('leaderCreate')" :active="request()->routeIs('leaderCreate')" class=text-yellow-400>
                         {{ __('Leadership') }}
                     </x-nav-link>
                 </div>

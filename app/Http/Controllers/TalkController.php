@@ -10,20 +10,30 @@ use App\Http\Requests\MessageRequest;
 
 class TalkController extends Controller
 {
-    public function send_message(Message $message,Request $request, Group $group)
+    public function sendMessage(Message $message,Request $request, Group $group)
     {
         $input = $request['message'];
         $input += array('group_id'=> $group->id);
+        
+        // ユーザーIDを取得してメッセージに追加
         $user = Auth::id();
         $input['user_id'] = $user;
+        
+        // メッセージを保存
         $message->fill($input)->save();
-        return redirect()->route('group_talk', ['group' => $group->id]);
+        
+        // グループのトークページにリダイレクト
+        return redirect()->route('groupTalk', ['group' => $group->id]);
     }
-    public function group_talk(Message $message, Group $group)
+    public function groupTalk(Message $message, Group $group)
     {
+        // グループに関連するメッセージを取得
         $messages = Message::where('group_id', $group->id)->get();
+        
+        // ログイン中のユーザーIDを取得
         $loggedInUserId = auth()->id();
-        return view('third.group_talk')->with(['messages' => $messages, 'group' => $group]);
+        
+        return view('leader_func.group_talk')->with(['messages' => $messages, 'group' => $group]);
     }
 }
 
