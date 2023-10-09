@@ -76,7 +76,7 @@
             </div>
             
             <div class='posts'>
-                <h3 class='text-4xl font-bold pl-32 pt-10 border-solid border-b-2 border-yellow-400'>投稿一覧</h3>
+                <h3 class='text-4xl font-bold pl-32 pt-10 border-solid border-b-2 border-yellow-400'>集めたお宝(投稿一覧)</h3>
        
             <div class = "flex basis-auto space-x-5 ml-32 pt-10">  
                 @foreach ($posts as $post) 

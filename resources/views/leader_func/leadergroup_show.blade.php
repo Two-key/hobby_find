@@ -61,7 +61,7 @@
         </h1>
         
           <div class='posts'>
-              <h2 class='text-3xl font-bold pl-32 pt-10 border-solid border-b-2 border-yellow-400'>過去の投稿</h2>
+              <h2 class='text-3xl font-bold pl-32 pt-10 border-solid border-b-2 border-yellow-400'>集めたお宝(投稿一覧)</h2>
         
         <div class = "flex flex-row flex-wrap space-x-5 ml-32 pt-10">  
             @foreach ($posts as $post)
