@@ -1,17 +1,17 @@
-    <head>
-        <title>GroupContent - Hobby_Find</title>
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <script src="{{ asset('js/like.js') }}" defer></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-        <style>
+<head>
+    <title>GroupContent - Hobby_Find</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script src="{{ asset('js/like.js') }}" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <style>
         .liked {
             color: pink;
         }
-        </style>
-    </head>
+    </style>
+</head>
 <x-app-layout>
     <body>
         <h2 class ="pt-72 mt-80">
@@ -78,28 +78,28 @@
             <div class='posts'>
                 <h3 class='text-4xl font-bold pl-32 pt-10 border-solid border-b-2 border-yellow-400'>集めたお宝(投稿一覧)</h3>
        
-            <div class = "flex basis-auto space-x-5 ml-32 pt-10">  
-                @foreach ($posts as $post) 
-                    <div class="block max-w-xs rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                    <div class="relative overflow-hidden bg-cover bg-no-repeat">
-                    <img 
-                        class="rounded-t-lg max-h-48 aspect-auto"
-                        src="{{ $post->image_url }}"
-                        alt="画像を表示できません" />
-                    </div>
-                    <div class="p-6">
-                        <p class="flex justify-center bg-white rounded border-2 border-yellow-400 font-bold text-base text-indigo-950 dark:text-indigo-950">
-                           {{ $post->title }}
-                        </p>
-                        <p class="mb-4 text-base text-indigo-950 dark:text-neutral-200">
-                            {{ $post->comment }}
-                         </p>
-                    </div>
-                    </div>
-                </a>
-               @endforeach
+                <div class = "flex basis-auto space-x-5 ml-32 pt-10">  
+                    @foreach ($posts as $post) 
+                        <div class="block max-w-xs rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                        <div class="relative overflow-hidden bg-cover bg-no-repeat">
+                        <img 
+                            class="rounded-t-lg max-h-48 aspect-auto"
+                            src="{{ $post->image_url }}"
+                            alt="画像を表示できません" />
+                        </div>
+                        <div class="p-6">
+                            <p class="flex justify-center bg-white rounded border-2 border-yellow-400 font-bold text-base text-indigo-950 dark:text-indigo-950">
+                               {{ $post->title }}
+                            </p>
+                            <p class="mb-4 text-base text-indigo-950 dark:text-neutral-200">
+                                {{ $post->comment }}
+                             </p>
+                        </div>
+                        </div>
+                    </a>
+                   @endforeach
+                </div>
             </div>
         </main>
-        </div>
     </body>
 </x-app-layout>
