@@ -18,7 +18,6 @@ Hobby_Findは以下に示すポイントに根差して設計されています�
 - みんなで楽しむグループトーク
 
 「自分の「好き」を発見し、趣味仲間と「好き」を楽しむこと」をコンセプトとしています．<br><br>
-<a href="https://hobbyfind-e3283a7fee5e.herokuapp.com/" target="_blank">アプリへGO</a>
 
 ##  開発環境
 <b>使用言語：</b><br>
