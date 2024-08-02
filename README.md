@@ -1,7 +1,6 @@
 
 <p align="center"><b>趣味仲間と航海に出よう</b></p>
 
-<p align="center"><a href="https://stark-journey-71646.herokuapp.com" target="_blank"><img src="https://stark-journey-71646.herokuapp.com/img/c5caaa1a.png" width="400"></a></p>
 <h1 align="center">Hobby_Find</h1>
 
 ##  制作背景
